@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelos de página — AISA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- Fonte da verdade: tokens + componentes. Esta página só acrescenta o painel de teste. -->
+<link rel="stylesheet" href="tokens/base.css">
+<link rel="stylesheet" href="tokens/components.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-body); font-size: var(--text-body); line-height: var(--leading-normal); }
+  img { max-width: 100%; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-5); }
+  .grid-2 { display: grid; grid-template-columns: 3fr 2fr; gap: var(--space-7); align-items: start; }
+  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+  .prose { max-width: 68ch; }
+  .prose h2 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h3); margin: var(--space-7) 0 var(--space-3); }
+  .prose h2:first-child { margin-top: 0; }
+  .prose ul { padding-left: 1.2em; }
+  .prose li { margin-bottom: var(--space-2); }
+  .prose a { color: var(--color-link); }
+  .prose figure { margin: var(--space-6) 0; }
+  .prose figure img { border-radius: var(--radius-media); display: block; width: 100%; }
+  .prose figcaption { font-size: var(--text-caption); color: var(--color-muted-foreground); margin-top: var(--space-2); }
+  .aside-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); position: sticky; top: 100px; }
+  .aside-card h3 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h4); margin: 0 0 var(--space-3); }
+  .aside-card dl { margin: 0; display: grid; gap: var(--space-3); }
+  .aside-card dt { font-size: var(--text-caption); color: var(--color-muted-foreground); }
+  .aside-card dd { margin: 0; }
+  .center-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+  .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
+  .support h3 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h3); margin: 0 0 var(--space-2); }
+  .support p { margin: 0 0 var(--space-4); }
+  .filter-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+  .filter-row button { font: inherit; font-size: var(--text-caption); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); border: 1px solid var(--color-input); background: var(--color-surface); color: var(--color-foreground); cursor: pointer; min-height: 44px; }
+  .filter-row button[aria-pressed="true"] { background: var(--color-primary); color: var(--color-primary-foreground); border-color: var(--color-primary); }
+  .group-title { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h3); margin: var(--space-8) 0 var(--space-5); }
+  .group-title:first-of-type { margin-top: 0; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---- Painel de teste (fora do design do site) ---- */
+  .test-panel { position: fixed; z-index: 50; right: var(--space-4); bottom: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); padding: var(--space-4); width: min(360px, calc(100vw - 2rem)); font-size: var(--text-caption); }
+  .test-panel h2 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h4); margin: 0 0 var(--space-2); }
+  .test-panel fieldset { border: 0; padding: 0; margin: 0 0 var(--space-3); }
+  .test-panel legend { color: var(--color-muted-foreground); margin-bottom: var(--space-2); }
+  .seg { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .seg button { font: inherit; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--color-input); background: var(--color-surface); color: var(--color-foreground); cursor: pointer; min-height: 40px; }
+  .seg button[aria-pressed="true"] { background: var(--color-foreground); color: var(--color-background); border-color: var(--color-foreground); }
+  .seg button:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+  .test-panel p { margin: 0; color: var(--color-muted-foreground); }
+  .test-panel .hide { background: none; border: 0; color: var(--color-link); font: inherit; cursor: pointer; padding: 0; text-decoration: underline; margin-top: var(--space-2); }
+  .test-panel.is-min > :not(.hide):not(h2) { display: none; }
+  .demo-flag { background: var(--color-warning-soft); color: var(--color-warning-soft-foreground); text-align: center; padding: var(--space-2) var(--space-4); font-size: var(--text-caption); }
+  [data-template][hidden] { display: none; }
+</style>
+</head>
+<body data-fundos="base">
+
+<div class="demo-flag">Modelo de referência do design system (brand-04). Texto ilustrativo: no site usa-se o texto actual de aisaipss.pt.</div>
+
+<!-- ===================== CABEÇALHO ===================== -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="#" data-goto="inicio"><img src="../proto-2/img/logo-aisa.png" alt="AISA — Associação de Apoio Social Nossa Senhora da Assunção"></a>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="#" data-goto="listagem">Serviços</a>
+      <a href="#">Sobre</a>
+      <a href="#">Notícias</a>
+      <a href="#">Agenda</a>
+      <a href="#">Documentos</a>
+      <a href="#">Contactos</a>
+    </nav>
+    <a class="btn btn-accent site-header__tel" href="tel:+351214857700">214 857 700</a>
+    <button class="btn btn-secondary site-header__menu" type="button" aria-label="Abrir menu">Menu</button>
+  </div>
+</header>
+
+<!-- ===================== MODELO 1 · INÍCIO ===================== -->
+<main data-template="inicio">
+  <section class="hero" aria-label="Destaque">
+    <div class="hero__text">
+      <h1 class="hero__title">Perto de si, a cuidar dos seus.</h1>
+      <p class="hero__lead">Promovemos a qualidade de vida das crianças, jovens, idosos e pessoas com dependência, na Malveira da Serra e em Janes. Da infância ao envelhecimento.</p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="#" data-goto="listagem">Conhecer os serviços</a>
+        <a class="btn btn-secondary" href="tel:+351214857700">Ligar 214 857 700</a>
+      </div>
+    </div>
+    <div class="slideshow" aria-roledescription="carrossel" aria-label="Fotografias da AISA">
+      <figure class="slideshow__slide" aria-hidden="false" aria-roledescription="diapositivo" aria-label="1 de 4"><img src="../proto-2/img/facebook/passeio-mar.png" alt="Utentes do Centro de Dia num passeio junto ao mar"></figure>
+      <figure class="slideshow__slide" aria-hidden="true" aria-roledescription="diapositivo" aria-label="2 de 4"><img src="../proto-2/img/facebook/procissao-assuncao.png" alt="Procissão de Nossa Senhora da Assunção na Malveira da Serra"></figure>
+      <figure class="slideshow__slide" aria-hidden="true" aria-roledescription="diapositivo" aria-label="3 de 4"><img src="../proto-2/img/facebook/atelier-pizza.png" alt="Crianças num atelier de pizzas"></figure>
+      <figure class="slideshow__slide" aria-hidden="true" aria-roledescription="diapositivo" aria-label="4 de 4"><img src="../proto-2/img/facebook/cerimonia-bandeiras.png" alt="Cerimónia com bandeiras"></figure>
+      <span class="slideshow__caption" aria-live="polite">Passeio ao mar — Centro de Dia</span>
+      <div class="slideshow__controls">
+        <div class="slideshow__dots" role="group" aria-label="Escolher fotografia"></div>
+        <div class="slideshow__btns">
+          <button class="slideshow__btn" type="button" data-slide="prev" aria-label="Fotografia anterior">&#8249;</button>
+          <button class="slideshow__btn" type="button" data-slide="play" aria-label="Reproduzir automaticamente">&#9654;</button>
+          <button class="slideshow__btn" type="button" data-slide="next" aria-label="Fotografia seguinte">&#8250;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="surface" data-bg-v1="sky" data-bg-v2="strong-blue">
+    <div class="section__inner">
+      <div class="proof-strip">
+        <div class="proof"><div class="proof__num">30</div><p class="proof__label">anos na Malveira da Serra</p></div>
+        <div class="proof"><div class="proof__num">337</div><p class="proof__label">pessoas apoiadas, em média</p><p class="proof__source">dados de 2025</p></div>
+        <div class="proof"><div class="proof__num">4,5</div><p class="proof__label">no Google</p><p class="proof__source">75 avaliações</p></div>
+        <div class="proof"><div class="proof__num">2017–2025</div><p class="proof__label">relatórios e contas publicados</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="plain" data-bg-v1="plain" data-bg-v2="plain">
+    <div class="section__inner">
+      <p class="section__eyebrow">Serviços</p>
+      <h2 class="section__title">Todo o apoio de que necessita</h2>
+      <p class="section__intro">Escolha pela fase da vida. Se tiver dúvidas sobre qual a resposta certa, ligue-nos.</p>
+      <div class="grid-3">
+        <a class="service-card" href="#" data-goto="servico" data-valencia="centro-dia">
+          <div class="service-card__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt=""></div>
+          <div class="service-card__body"><span class="valencia-tag">Centro de Dia</span><h3 class="service-card__title">Centro de Dia</h3><p class="service-card__text">Apoio durante o dia, com refeições, actividades e cuidados.</p><span class="service-card__more">Saber mais</span></div>
+        </a>
+        <a class="service-card" href="#" data-valencia="sad">
+          <div class="service-card__media"><img src="../proto-2/img/facebook/passeio-mar.png" alt=""></div>
+          <div class="service-card__body"><span class="valencia-tag">SAD — Apoio Domiciliário</span><h3 class="service-card__title">Apoio Domiciliário</h3><p class="service-card__text">Vamos a sua casa: higiene, refeições e companhia.</p><span class="service-card__more">Saber mais</span></div>
+        </a>
+        <a class="service-card" href="#" data-valencia="infancia">
+          <div class="service-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""></div>
+          <div class="service-card__body"><span class="valencia-tag">Infância e Juventude</span><h3 class="service-card__title">Apoio à Infância e ATL</h3><p class="service-card__text">Horários, idades e férias, tudo à vista.</p><span class="service-card__more">Saber mais</span></div>
+        </a>
+      </div>
+      <div class="center-cta"><a class="btn btn-secondary" href="#" data-goto="listagem">Ver todos os serviços</a></div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="muted" data-bg-v1="sand" data-bg-v2="muted">
+    <div class="section__inner">
+      <figure class="testimonial" data-valencia="centro-dia" style="margin:0 auto;">
+        <blockquote class="testimonial__quote" style="margin-left:0;margin-right:0;">Aqui, ninguém é só mais um processo. A minha mãe é tratada pelo nome e volta para casa com vontade de regressar.</blockquote>
+        <figcaption class="testimonial__who">Filha de utente · Centro de Dia</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="surface" data-bg-v1="plain" data-bg-v2="surface">
+    <div class="section__inner">
+      <p class="section__eyebrow">Notícias</p>
+      <h2 class="section__title">A vida na AISA</h2>
+      <div class="news-grid" style="margin-top:var(--space-6);">
+        <a class="news-card news-card--lead" href="#" data-valencia="generico">
+          <div class="news-card__media"><img src="../proto-2/img/facebook/procissao-assuncao.png" alt=""><span class="valencia-tag">Comunidade</span></div>
+          <div class="news-card__body"><span class="news-card__date">15 de agosto de 2026</span><h3 class="news-card__title">Procissão de Nossa Senhora da Assunção</h3><p class="news-card__excerpt">A festa da padroeira voltou a juntar utentes, famílias e vizinhos pelas ruas da Malveira da Serra.</p></div>
+        </a>
+        <a class="news-card" href="#" data-valencia="infancia">
+          <div class="news-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""><span class="valencia-tag">Infância e Juventude</span></div>
+          <div class="news-card__body"><span class="news-card__date">2 de julho de 2026</span><h3 class="news-card__title">Atelier de pizzas nas férias do ATL</h3></div>
+        </a>
+        <a class="news-card" href="#" data-valencia="centro-dia">
+          <div class="news-card__media"><img src="../proto-2/img/facebook/passeio-mar.png" alt=""><span class="valencia-tag">Centro de Dia</span></div>
+          <div class="news-card__body"><span class="news-card__date">20 de junho de 2026</span><h3 class="news-card__title">Passeio ao mar</h3></div>
+        </a>
+        <a class="news-card" href="#" data-valencia="sad">
+          <div class="news-card__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt=""><span class="valencia-tag">SAD</span></div>
+          <div class="news-card__body"><span class="news-card__date">5 de junho de 2026</span><h3 class="news-card__title">Um dia com a equipa do Apoio Domiciliário</h3></div>
+        </a>
+        <a class="news-card" href="#" data-valencia="generico">
+          <div class="news-card__media"><img src="../proto-2/img/facebook/cerimonia-bandeiras.png" alt=""><span class="valencia-tag">Comunidade</span></div>
+          <div class="news-card__body"><span class="news-card__date">25 de abril de 2026</span><h3 class="news-card__title">Cerimónia do 25 de Abril</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="plain" data-bg-v1="sage" data-bg-v2="plain">
+    <div class="section__inner">
+      <p class="section__eyebrow">Agenda</p>
+      <h2 class="section__title">O que vem aí</h2>
+      <div style="max-width:760px;margin-top:var(--space-5);">
+        <div class="event" data-valencia="generico"><div class="event__date"><span class="event__day">15</span><span class="event__month">ago</span></div><div><h3 class="event__title">Festa de Nossa Senhora da Assunção</h3><p class="event__meta">Malveira da Serra · todo o dia</p></div></div>
+        <div class="event" data-valencia="infancia"><div class="event__date"><span class="event__day">23</span><span class="event__month">jun</span></div><div><h3 class="event__title">Arraial de São João</h3><p class="event__meta">Sede da AISA · 18h00</p></div></div>
+        <div class="event" data-valencia="centro-dia"><div class="event__date"><span class="event__day">01</span><span class="event__month">out</span></div><div><h3 class="event__title">Dia Internacional do Idoso</h3><p class="event__meta">Centro de Dia · 15h00</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="muted" data-bg-v1="sky" data-bg-v2="strong-green">
+    <div class="section__inner">
+      <p class="section__eyebrow">Participar</p>
+      <h2 class="section__title">A AISA é feita pela terra</h2>
+      <div class="support-grid" style="margin-top:var(--space-6);">
+        <div class="support"><h3>Torne-se associado</h3><p>Ser sócio é um requisito para ser utente e ajuda a manter os nossos serviços.</p><a class="btn btn-primary" href="#" data-strong-btn>Torne-se associado</a></div>
+        <div class="support"><h3>Consigne o seu IRS</h3><p>Não lhe custa nada e ajuda-nos a continuar. Indique o NIF da AISA na sua declaração.</p><a class="btn btn-secondary" href="#" data-strong-btn>Como consignar</a></div>
+        <div class="support"><h3>Seja voluntário</h3><p>Tem tempo para dar? Há sempre lugar para mais uma mão.</p><a class="btn btn-secondary" href="#" data-strong-btn>Candidatar-me</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="surface" data-bg-v1="plain" data-bg-v2="surface">
+    <div class="section__inner">
+      <div class="contact-block">
+        <div><h2 class="contact-block__title">Fale connosco</h2><p class="contact-block__text">Estamos disponíveis para o acompanhar em cada passo. Ligue-nos e fazemos as contas consigo.</p></div>
+        <a class="contact-block__tel" href="tel:+351214857700">214 857 700</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== MODELO 2 · PÁGINA DE SERVIÇO ===================== -->
+<main data-template="servico" hidden>
+  <div class="page-header" data-valencia="centro-dia">
+    <div class="page-header__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt="Sala do Centro de Dia"></div>
+    <div class="page-header__card">
+      <p class="breadcrumb"><a href="#" data-goto="inicio">Início</a> › <a href="#" data-goto="listagem">Serviços</a> › Envelhecimento</p>
+      <span class="valencia-tag">Centro de Dia</span>
+      <h1 class="page-header__title">Centro de Dia</h1>
+      <p class="page-header__lead">Todo o apoio de que necessita durante o dia, regressando a casa ao fim da tarde.</p>
+    </div>
+  </div>
+
+  <section class="section" data-bg-base="plain" data-bg-v1="plain" data-bg-v2="plain">
+    <div class="section__inner grid-2">
+      <div class="prose">
+        <h2>Para quem é</h2>
+        <p>Pessoas idosas que vivem em casa e precisam de companhia, refeições e acompanhamento durante o dia, mantendo a ligação à família e à comunidade.</p>
+        <h2>O que inclui</h2>
+        <ul>
+          <li>Refeições (pequeno-almoço, almoço e lanche)</li>
+          <li>Actividades de animação e passeios</li>
+          <li>Cuidados de higiene e acompanhamento de saúde</li>
+          <li>Transporte, conforme disponibilidade</li>
+        </ul>
+        <figure><img src="../proto-2/img/facebook/passeio-mar.png" alt="Passeio ao mar com os utentes do Centro de Dia"><figcaption>Passeio ao mar, junho de 2026.</figcaption></figure>
+        <h2>Como aceder</h2>
+        <p>O valor depende dos rendimentos do agregado, conforme o regulamento. Ligue-nos e fazemos as contas consigo.</p>
+        <div class="doc-group">
+          <ul class="doc-list">
+            <li><a href="#"><svg class="doc-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span class="doc-list__name">Regulamento interno do Centro de Dia</span><span class="doc-list__meta">PDF · 420 KB</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <aside class="aside-card" data-valencia="centro-dia">
+        <h3>Informação prática</h3>
+        <dl>
+          <dt>Horário</dt><dd>Segunda a sexta, 8h30 – 17h30</dd>
+          <dt>Onde</dt><dd>Malveira da Serra</dd>
+          <dt>Contacto</dt><dd><a href="tel:+351214857700" style="color:var(--color-link)">214 857 700</a></dd>
+        </dl>
+        <div style="margin-top:var(--space-5);"><a class="btn btn-accent" href="tel:+351214857700" style="width:100%;">Ligar agora</a></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="muted" data-bg-v1="sage" data-bg-v2="strong-green">
+    <div class="section__inner">
+      <figure class="testimonial" data-valencia="centro-dia" style="margin:0 auto;">
+        <blockquote class="testimonial__quote" style="margin-left:0;margin-right:0;">O meu pai voltou a ter vontade de sair de casa. As tardes no Centro de Dia são o ponto alto da semana dele.</blockquote>
+        <figcaption class="testimonial__who">Filho de utente · Centro de Dia</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="plain" data-bg-v1="plain" data-bg-v2="plain">
+    <div class="section__inner">
+      <div class="contact-block">
+        <div><h2 class="contact-block__title">Quer saber se o Centro de Dia é o certo?</h2><p class="contact-block__text">Explicamos a diferença para o Apoio Domiciliário e ajudamos a decidir.</p></div>
+        <a class="contact-block__tel" href="tel:+351214857700">214 857 700</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== MODELO 3 · LISTAGEM DE SERVIÇOS ===================== -->
+<main data-template="listagem" hidden>
+  <div class="page-header" data-valencia="generico">
+    <div class="page-header__media"><img src="../proto-2/img/facebook/cerimonia-bandeiras.png" alt="Utentes, famílias e equipa da AISA"></div>
+    <div class="page-header__card">
+      <p class="breadcrumb"><a href="#" data-goto="inicio">Início</a> › Serviços</p>
+      <h1 class="page-header__title">Serviços</h1>
+      <p class="page-header__lead">Da infância ao envelhecimento. Escolha pela fase da vida.</p>
+    </div>
+  </div>
+
+  <section class="section" data-bg-base="plain" data-bg-v1="plain" data-bg-v2="plain">
+    <div class="section__inner">
+      <h2 class="group-title" data-valencia="sad"><span class="valencia-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11L12 4l8 7"/><rect x="6" y="11" width="12" height="9" rx="1"/><path d="M10.5 20v-5h3v5"/></svg></span>Envelhecimento</h2>
+      <div class="grid-3">
+        <a class="service-card" href="#" data-goto="servico" data-valencia="centro-dia"><div class="service-card__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Centro de Dia</span><h3 class="service-card__title">Centro de Dia</h3><p class="service-card__text">Apoio durante o dia, com refeições e actividades.</p><span class="service-card__more">Saber mais</span></div></a>
+        <a class="service-card" href="#" data-valencia="sad"><div class="service-card__media"><img src="../proto-2/img/facebook/passeio-mar.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">SAD — Apoio Domiciliário</span><h3 class="service-card__title">Apoio Domiciliário</h3><p class="service-card__text">Vamos a sua casa.</p><span class="service-card__more">Saber mais</span></div></a>
+        <a class="service-card" href="#" data-valencia="generico"><div class="service-card__media"><img src="../proto-2/img/facebook/procissao-assuncao.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Em construção</span><h3 class="service-card__title">Novas instalações: Lar e Centro de Dia</h3><p class="service-card__text">Uma resposta futura. Ligue-nos para saber mais.</p><span class="service-card__more">Saber mais</span></div></a>
+      </div>
+
+      <h2 class="group-title" data-valencia="infancia"><span class="valencia-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 7-7 7-7-7z"/><path d="M12 17c0 2-1.5 3-3 4"/></svg></span>Infância e Juventude</h2>
+      <div class="grid-3">
+        <a class="service-card" href="#" data-valencia="infancia"><div class="service-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Infância e Juventude</span><h3 class="service-card__title">Apoio à Infância e Juventude</h3><p class="service-card__text">Acompanhamento depois da escola.</p><span class="service-card__more">Saber mais</span></div></a>
+        <a class="service-card" href="#" data-valencia="infancia"><div class="service-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Infância e Juventude</span><h3 class="service-card__title">ATL e férias</h3><p class="service-card__text">Horários, idades e actividades de férias.</p><span class="service-card__more">Saber mais</span></div></a>
+      </div>
+
+      <h2 class="group-title" data-valencia="generico"><span class="valencia-icon" style="border:1px solid var(--color-border)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5L5 13.5C3.5 12 3.5 9.5 5 8s3.5-1.3 5 0c1 .8 1.5 1.5 2 2.1.5-.6 1-1.3 2-2.1 1.5-1.3 3.5-1.5 5 0s1.5 4 0 5.5z"/></svg></span>Saúde e Reabilitação</h2>
+      <div class="grid-3">
+        <a class="service-card" href="#" data-valencia="generico"><div class="service-card__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Saúde e Reabilitação</span><h3 class="service-card__title">Terapia da Fala</h3><p class="service-card__text">Aberta à comunidade.</p><span class="service-card__more">Saber mais</span></div></a>
+        <a class="service-card" href="#" data-valencia="generico"><div class="service-card__media"><img src="../proto-2/img/facebook/cerimonia-bandeiras.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Saúde e Reabilitação</span><h3 class="service-card__title">Psicologia</h3><p class="service-card__text">Consultas para crianças e adultos.</p><span class="service-card__more">Saber mais</span></div></a>
+        <a class="service-card" href="#" data-valencia="generico"><div class="service-card__media"><img src="../proto-2/img/facebook/passeio-mar.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Saúde e Reabilitação</span><h3 class="service-card__title">Fisioterapia</h3><p class="service-card__text">Reabilitação e manutenção.</p><span class="service-card__more">Saber mais</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-bg-base="muted" data-bg-v1="sky" data-bg-v2="strong-blue">
+    <div class="section__inner">
+      <h2 class="section__title">Não sabe qual escolher?</h2>
+      <p class="section__intro" style="margin-bottom:var(--space-5);">Ligue-nos. Explicamos a diferença entre as respostas e ajudamos a decidir, sem compromisso.</p>
+      <a class="btn btn-primary" href="tel:+351214857700" data-strong-btn>Ligar 214 857 700</a>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div><p class="site-footer__title">AISA</p><p>Associação de Apoio Social Nossa Senhora da Assunção<br>Malveira da Serra · Alcabideche</p><p><a href="tel:+351214857700">214 857 700</a> · <a href="mailto:comunicacao@aisaipss.pt">comunicacao@aisaipss.pt</a></p></div>
+    <div><p class="site-footer__title">Serviços</p><ul><li><a href="#">Envelhecimento</a></li><li><a href="#">Infância e Juventude</a></li><li><a href="#">Saúde e Reabilitação</a></li></ul></div>
+    <div><p class="site-footer__title">A AISA</p><ul><li><a href="#">Sobre</a></li><li><a href="#">Documentos</a></li><li><a href="#">Parcerias</a></li></ul></div>
+    <div><p class="site-footer__title">Participar</p><ul><li><a href="#">Associado</a></li><li><a href="#">Voluntariado</a></li><li><a href="#">Consignação do IRS</a></li></ul></div>
+  </div>
+  <div class="site-footer__legal">Política de Privacidade · Termos · Cookies · Declaração de Acessibilidade</div>
+</footer>
+
+<!-- ===================== PAINEL DE TESTE ===================== -->
+<aside class="test-panel" aria-label="Painel de comparação">
+  <h2>Comparar</h2>
+  <fieldset>
+    <legend>Modelo de página</legend>
+    <div class="seg" data-group="template">
+      <button type="button" data-value="inicio" aria-pressed="true">Início</button>
+      <button type="button" data-value="servico" aria-pressed="false">Serviço</button>
+      <button type="button" data-value="listagem" aria-pressed="false">Listagem</button>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Fundos das secções</legend>
+    <div class="seg" data-group="fundos">
+      <button type="button" data-value="base" aria-pressed="true">Base (aprovada)</button>
+      <button type="button" data-value="v1" aria-pressed="false">V1 · Tons suaves</button>
+      <button type="button" data-value="v2" aria-pressed="false">V2 · Faixas fortes</button>
+    </div>
+  </fieldset>
+  <p data-desc></p>
+  <button type="button" class="hide" data-min>Minimizar painel</button>
+</aside>
+
+<script>
+(function () {
+  // ---- Fundos: aplica a classe .section--X conforme a versão escolhida ----
+  const desc = {
+    base: "Base aprovada: fundo branco quente, branco e cinza muito claro. A cor vive nas fotografias, faixas e etiquetas.",
+    v1: "Versão 1: tintas claras do azul, verde e laranja do logótipo em secções alternadas. Texto antracite; todos os pares passam AA.",
+    v2: "Versão 2: base clara com 1–2 faixas de cor cheia por página (azul ou verde), texto branco e botão invertido. Todos os pares passam AA."
+  };
+  const sections = document.querySelectorAll(".section[data-bg-base]");
+  function setFundos(v) {
+    document.body.dataset.fundos = v;
+    sections.forEach(s => {
+      [...s.classList].filter(c => c.startsWith("section--")).forEach(c => s.classList.remove(c));
+      const bg = s.dataset["bg" + v.charAt(0).toUpperCase() + v.slice(1)] || s.dataset.bgBase;
+      s.classList.add("section--" + bg);
+      const strong = bg.startsWith("strong");
+      s.querySelectorAll("[data-strong-btn]").forEach(b => {
+        b.classList.toggle("btn-inverse", strong);
+        b.classList.toggle(b.dataset.orig || (b.dataset.orig = [...b.classList].find(c => /^btn-(primary|secondary|accent)$/.test(c))), !strong);
+      });
+    });
+    document.querySelector("[data-desc]").textContent = desc[v];
+  }
+  function setTemplate(t) {
+    document.querySelectorAll("main[data-template]").forEach(m => m.hidden = m.dataset.template !== t);
+    document.querySelectorAll('.seg[data-group="template"] button').forEach(b => b.setAttribute("aria-pressed", b.dataset.value === t));
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll(".seg").forEach(g => g.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    g.dataset.group === "fundos" ? setFundos(b.dataset.value) : setTemplate(b.dataset.value);
+    try { localStorage.setItem("aisa-" + g.dataset.group, b.dataset.value); } catch (_) {}
+  }));
+  document.querySelectorAll("[data-goto]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); setTemplate(a.dataset.goto); }));
+  document.querySelector("[data-min]").addEventListener("click", e => {
+    const p = e.target.closest(".test-panel"); p.classList.toggle("is-min");
+    e.target.textContent = p.classList.contains("is-min") ? "Mostrar painel" : "Minimizar painel";
+  });
+  if (window.innerWidth < 700) {
+    const p = document.querySelector(".test-panel"); p.classList.add("is-min");
+    p.querySelector("[data-min]").textContent = "Mostrar painel";
+  }
+  const q = new URLSearchParams(location.search);
+  let f = q.get("fundos"), t = q.get("modelo");
+  try { f = f || localStorage.getItem("aisa-fundos"); t = t || localStorage.getItem("aisa-template"); } catch (_) {}
+  f = ["base", "v1", "v2"].includes(f) ? f : "base";
+  document.querySelectorAll('.seg[data-group="fundos"] button').forEach(b => b.setAttribute("aria-pressed", b.dataset.value === f));
+  setFundos(f);
+  if (["inicio", "servico", "listagem"].includes(t)) setTemplate(t);
+
+  // ---- Slideshow: manual por defeito; reprodução automática só se pedida ----
+  const show = document.querySelector(".slideshow");
+  const slides = [...show.querySelectorAll(".slideshow__slide")];
+  const captions = ["Passeio ao mar — Centro de Dia", "Procissão de Nossa Senhora da Assunção", "Atelier de pizzas — Infância e Juventude", "Cerimónia com bandeiras"];
+  const dotsBox = show.querySelector(".slideshow__dots");
+  const cap = show.querySelector(".slideshow__caption");
+  const playBtn = show.querySelector('[data-slide="play"]');
+  let i = 0, timer = null;
+  slides.forEach((_, n) => {
+    const d = document.createElement("button");
+    d.type = "button"; d.className = "slideshow__dot"; d.setAttribute("aria-label", "Fotografia " + (n + 1));
+    d.addEventListener("click", () => go(n)); dotsBox.appendChild(d);
+  });
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.setAttribute("aria-hidden", k !== i));
+    dotsBox.querySelectorAll("button").forEach((d, k) => d.setAttribute("aria-current", k === i));
+    cap.textContent = captions[i];
+  }
+  show.querySelector('[data-slide="prev"]').addEventListener("click", () => go(i - 1));
+  show.querySelector('[data-slide="next"]').addEventListener("click", () => go(i + 1));
+  playBtn.addEventListener("click", () => {
+    if (timer) { clearInterval(timer); timer = null; playBtn.innerHTML = "&#9654;"; playBtn.setAttribute("aria-label", "Reproduzir automaticamente"); }
+    else { timer = setInterval(() => go(i + 1), 6000); playBtn.innerHTML = "&#10074;&#10074;"; playBtn.setAttribute("aria-label", "Pausar"); }
+  });
+  go(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "$description": "AISA design tokens — espelho exacto de base.css. Cor em OKLCH, modo claro apenas (sem dark mode, por requisito). Todos os pares texto/superfície cumprem WCAG AA.",
+  "color": {
+    "background": "oklch(0.991 0.003 84.6)",
+    "surface": "oklch(1 0 0)",
+    "surface-elevated": "oklch(1 0 0)",
+    "foreground": "oklch(0.285 0.004 84.6)",
+    "muted": "oklch(0.962 0.004 84.6)",
+    "muted-foreground": "oklch(0.518 0.010 84.6)",
+    "border": "oklch(0.907 0.009 84.6)",
+    "input": "oklch(0.868 0.010 84.6)",
+    "ring": "oklch(0.45 0.12 248.2)",
+
+    "primary": "oklch(0.548 0.136 248.2)",
+    "primary-foreground": "oklch(1 0 0)",
+    "primary-hover": "oklch(0.48 0.13 248.2)",
+    "primary-active": "oklch(0.43 0.12 248.2)",
+
+    "secondary": "oklch(0.962 0.004 84.6)",
+    "secondary-foreground": "oklch(0.285 0.004 84.6)",
+    "secondary-hover": "oklch(0.930 0.005 84.6)",
+
+    "accent": "oklch(0.687 0.166 51.4)",
+    "accent-foreground": "oklch(0.285 0.004 84.6)",
+    "accent-hover": "oklch(0.63 0.16 51.4)",
+    "accent-active": "oklch(0.58 0.15 51.4)",
+
+    "brand-green": "oklch(0.606 0.155 147.5)",
+
+    "link": "oklch(0.45 0.12 248.2)",
+    "link-hover": "oklch(0.38 0.11 248.2)",
+    "link-visited": "oklch(0.42 0.10 300)",
+
+    "success": "oklch(0.50 0.130 147.5)",
+    "success-foreground": "oklch(1 0 0)",
+    "warning": "oklch(0.52 0.110 74.7)",
+    "warning-foreground": "oklch(1 0 0)",
+    "destructive": "oklch(0.521 0.158 29.2)",
+    "destructive-foreground": "oklch(1 0 0)",
+
+    "info-soft": "oklch(0.959 0.013 241.0)",
+    "info-soft-foreground": "oklch(0.44 0.12 248.2)",
+    "success-soft": "oklch(0.962 0.017 153.6)",
+    "success-soft-foreground": "oklch(0.43 0.12 147.5)",
+    "warning-soft": "oklch(0.957 0.025 65.6)",
+    "warning-soft-foreground": "oklch(0.44 0.10 66)",
+    "destructive-soft": "oklch(0.957 0.022 29)",
+    "destructive-soft-foreground": "oklch(0.47 0.15 29.2)",
+
+    "valencia-sad-accent": "oklch(0.548 0.136 248.2)",
+    "valencia-sad": "oklch(0.954 0.014 244.7)",
+    "valencia-sad-foreground": "oklch(0.462 0.113 247.9)",
+    "valencia-centro-dia-accent": "oklch(0.606 0.155 147.5)",
+    "valencia-centro-dia": "oklch(0.959 0.017 153.6)",
+    "valencia-centro-dia-foreground": "oklch(0.467 0.117 148.1)",
+    "valencia-infancia-accent": "oklch(0.687 0.166 51.4)",
+    "valencia-infancia": "oklch(0.963 0.019 60.2)",
+    "valencia-infancia-foreground": "oklch(0.502 0.125 50.4)",
+    "valencia-generico-accent": "oklch(0.768 0.014 82.4)",
+    "valencia-generico": "oklch(1 0 0)",
+    "valencia-generico-foreground": "oklch(0.285 0.004 84.6)",
+    "valencia-cozinha-accent": "oklch(0.619 0.013 79.8)",
+    "valencia-cozinha": "oklch(0.947 0.006 84.6)",
+    "valencia-cozinha-foreground": "oklch(0.399 0.008 75.3)",
+
+    "section-sky": "oklch(0.935 0.028 245)",
+    "section-sky-foreground": "oklch(0.285 0.004 84.6)",
+    "section-sage": "oklch(0.940 0.032 150)",
+    "section-sage-foreground": "oklch(0.285 0.004 84.6)",
+    "section-sand": "oklch(0.950 0.030 70)",
+    "section-sand-foreground": "oklch(0.285 0.004 84.6)",
+    "section-strong-blue": "oklch(0.43 0.12 248.2)",
+    "section-strong-blue-foreground": "oklch(1 0 0)",
+    "section-strong-green": "oklch(0.45 0.11 150)",
+    "section-strong-green-foreground": "oklch(1 0 0)",
+    "section-strong-orange": "oklch(0.72 0.15 55)",
+    "section-strong-orange-foreground": "oklch(0.285 0.004 84.6)"
+  },
+  "layout": {
+    "hero-min-height": "27.5rem",
+    "hero-media-ratio": "7fr",
+    "hero-text-ratio": "5fr",
+    "page-header-height": "18.75rem",
+    "page-header-height-mobile": "12.5rem",
+    "news-media-ratio": "16 / 10",
+    "radius-media": "0.875rem"
+  },
+  "font": {
+    "display": "'Fraunces', Georgia, 'Times New Roman', serif",
+    "body": "'Atkinson Hyperlegible', system-ui, sans-serif"
+  },
+  "text": {
+    "caption": "1rem",
+    "body": "1.125rem",
+    "body-lg": "1.25rem",
+    "h4": "1.375rem",
+    "h3": "1.75rem",
+    "h2": "2.25rem",
+    "h1": "3rem",
+    "display": "3.75rem"
+  },
+  "leading": {
+    "tight": "1.15",
+    "snug": "1.35",
+    "normal": "1.6"
+  },
+  "weight": {
+    "regular": "400",
+    "medium": "500",
+    "body-bold": "700"
+  },
+  "space": {
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.5rem",
+    "6": "2rem",
+    "7": "3rem",
+    "8": "4rem",
+    "9": "6rem"
+  },
+  "radius": {
+    "sm": "0.375rem",
+    "md": "0.625rem",
+    "lg": "0.75rem",
+    "xl": "1rem",
+    "full": "999px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px oklch(0.285 0.004 84.6 / 0.06)",
+    "md": "0 2px 8px oklch(0.285 0.004 84.6 / 0.08), 0 1px 2px oklch(0.285 0.004 84.6 / 0.04)",
+    "lg": "0 8px 24px oklch(0.285 0.004 84.6 / 0.10), 0 2px 6px oklch(0.285 0.004 84.6 / 0.05)"
+  },
+  "focus": {
+    "ring": "0 0 0 3px oklch(0.45 0.12 248.2 / 0.45)"
+  },
+  "disabled": {
+    "opacity": "0.5"
+  }
+}

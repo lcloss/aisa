@@ -1,14 +1,251 @@
 {
-  "$comment": "Pares texto-sobre-superfície que o modo --tokens (auto -foreground) não cobre: texto corrido, muted e links sobre fundo/superfície. Complementa a validação automática dos pares *-foreground. Modo claro apenas.",
+  "$comment": "Pares texto-sobre-superfície que o modo --tokens (auto *-foreground) não cobre: texto corrido, muted e links sobre fundo/superfície, valências e fundos de secção (teste). Complementa a validação automática dos pares *-foreground. Modo claro apenas. Actualizado 2026-11-07 (brand-04).",
   "pairs": [
-    { "name": "foreground / background",        "fg": "oklch(0.285 0.004 84.6)", "bg": "oklch(0.991 0.003 84.6)", "large": false },
-    { "name": "foreground / surface",           "fg": "oklch(0.285 0.004 84.6)", "bg": "oklch(1 0 0)",            "large": false },
-    { "name": "muted-foreground / background",  "fg": "oklch(0.518 0.010 84.6)", "bg": "oklch(0.991 0.003 84.6)", "large": false },
-    { "name": "muted-foreground / surface",     "fg": "oklch(0.518 0.010 84.6)", "bg": "oklch(1 0 0)",            "large": false },
-    { "name": "muted-foreground / muted",       "fg": "oklch(0.518 0.010 84.6)", "bg": "oklch(0.962 0.004 84.6)", "large": false },
-    { "name": "link / background",              "fg": "oklch(0.45 0.12 248.2)",  "bg": "oklch(0.991 0.003 84.6)", "large": false },
-    { "name": "link / surface",                 "fg": "oklch(0.45 0.12 248.2)",  "bg": "oklch(1 0 0)",            "large": false },
-    { "name": "link-hover / background",        "fg": "oklch(0.38 0.11 248.2)",  "bg": "oklch(0.991 0.003 84.6)", "large": false },
-    { "name": "primary (título/ícone) / background", "fg": "oklch(0.548 0.136 248.2)", "bg": "oklch(0.991 0.003 84.6)", "large": true }
+    {
+      "name": "foreground / background",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.991 0.003 84.6)",
+      "large": false
+    },
+    {
+      "name": "foreground / surface",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(1 0 0)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / background",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.991 0.003 84.6)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / surface",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(1 0 0)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / muted",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.962 0.004 84.6)",
+      "large": false
+    },
+    {
+      "name": "link / background",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.991 0.003 84.6)",
+      "large": false
+    },
+    {
+      "name": "link / surface",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(1 0 0)",
+      "large": false
+    },
+    {
+      "name": "link-hover / background",
+      "fg": "oklch(0.38 0.11 248.2)",
+      "bg": "oklch(0.991 0.003 84.6)",
+      "large": false
+    },
+    {
+      "name": "primary (título/ícone) / background",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.991 0.003 84.6)",
+      "large": true
+    },
+    {
+      "name": "foreground / valencia-sad",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.954 0.014 244.7)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / valencia-sad",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.954 0.014 244.7)",
+      "large": false
+    },
+    {
+      "name": "link / valencia-sad",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.954 0.014 244.7)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / valencia-sad [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.954 0.014 244.7)",
+      "large": true
+    },
+    {
+      "name": "foreground / valencia-centro-dia",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.959 0.017 153.6)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / valencia-centro-dia",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.959 0.017 153.6)",
+      "large": false
+    },
+    {
+      "name": "link / valencia-centro-dia",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.959 0.017 153.6)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / valencia-centro-dia [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.959 0.017 153.6)",
+      "large": true
+    },
+    {
+      "name": "foreground / valencia-infancia",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.963 0.019 60.2)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / valencia-infancia",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.963 0.019 60.2)",
+      "large": false
+    },
+    {
+      "name": "link / valencia-infancia",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.963 0.019 60.2)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / valencia-infancia [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.963 0.019 60.2)",
+      "large": true
+    },
+    {
+      "name": "foreground / valencia-cozinha",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.947 0.006 84.6)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / valencia-cozinha",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.947 0.006 84.6)",
+      "large": false
+    },
+    {
+      "name": "link / valencia-cozinha",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.947 0.006 84.6)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / valencia-cozinha [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.947 0.006 84.6)",
+      "large": true
+    },
+    {
+      "name": "foreground / section-sky",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.935 0.028 245)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / section-sky",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.935 0.028 245)",
+      "large": false
+    },
+    {
+      "name": "link / section-sky",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.935 0.028 245)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / section-sky [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.935 0.028 245)",
+      "large": true
+    },
+    {
+      "name": "foreground / section-sage",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.940 0.032 150)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / section-sage",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.940 0.032 150)",
+      "large": false
+    },
+    {
+      "name": "link / section-sage",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.940 0.032 150)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / section-sage [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.940 0.032 150)",
+      "large": true
+    },
+    {
+      "name": "foreground / section-sand",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.950 0.030 70)",
+      "large": false
+    },
+    {
+      "name": "muted-foreground / section-sand",
+      "fg": "oklch(0.518 0.010 84.6)",
+      "bg": "oklch(0.950 0.030 70)",
+      "large": false
+    },
+    {
+      "name": "link / section-sand",
+      "fg": "oklch(0.45 0.12 248.2)",
+      "bg": "oklch(0.950 0.030 70)",
+      "large": false
+    },
+    {
+      "name": "primary (botão) / section-sand [UI 3:1]",
+      "fg": "oklch(0.548 0.136 248.2)",
+      "bg": "oklch(0.950 0.030 70)",
+      "large": true
+    },
+    {
+      "name": "primary-foreground / section-strong-blue (botão invertido)",
+      "fg": "oklch(0.43 0.12 248.2)",
+      "bg": "oklch(1 0 0)",
+      "large": false
+    },
+    {
+      "name": "botão invertido (surface) / section-strong-green [UI 3:1]",
+      "fg": "oklch(1 0 0)",
+      "bg": "oklch(0.45 0.11 150)",
+      "large": true
+    },
+    {
+      "name": "texto primary-active / botão invertido em section-strong-green",
+      "fg": "oklch(0.43 0.12 248.2)",
+      "bg": "oklch(1 0 0)",
+      "large": false
+    },
+    {
+      "name": "foreground / botão invertido em section-strong-orange [UI 3:1, borda antracite]",
+      "fg": "oklch(0.285 0.004 84.6)",
+      "bg": "oklch(0.72 0.15 55)",
+      "large": true
+    }
   ]
 }

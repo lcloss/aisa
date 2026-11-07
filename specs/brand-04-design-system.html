@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — AISA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- FONTE DA VERDADE: os tokens reais, importados. Nada de cor/raio/sombra é
+     redefinido nesta página — só layout. -->
+<link rel="stylesheet" href="tokens/base.css">
+<link rel="stylesheet" href="tokens/components.css">
+
+<style>
+  /* ---- Apenas LAYOUT. Cor, tipo, raio e sombra vêm de base.css. ---------- */
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-normal);
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--space-6); }
+
+  header.hero {
+    padding: var(--space-9) 0 var(--space-7);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .eyebrow {
+    font-size: var(--text-caption);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+    margin: 0 0 var(--space-3);
+  }
+  header.hero h1 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-display);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-3);
+  }
+  header.hero p {
+    font-size: var(--text-body-lg);
+    color: var(--color-muted-foreground);
+    max-width: 640px;
+    margin: 0;
+  }
+
+  section { padding: var(--space-8) 0; border-bottom: 1px solid var(--color-border); }
+  section:last-of-type { border-bottom: none; }
+
+  h2.section-title {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-h2);
+    line-height: var(--leading-snug);
+    margin: 0 0 var(--space-2);
+  }
+  p.section-intro {
+    color: var(--color-muted-foreground);
+    max-width: 720px;
+    margin: 0 0 var(--space-6);
+  }
+  h3.block-title {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-h3);
+    margin: var(--space-7) 0 var(--space-4);
+  }
+  h3.block-title:first-of-type { margin-top: 0; }
+  .muted { color: var(--color-muted-foreground); }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--color-muted);
+    padding: 0.1em 0.4em;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ---- Nota / callout (usa o modelo suave dos tokens) -------------------- */
+  .note {
+    background: var(--color-info-soft);
+    color: var(--color-info-soft-foreground);
+    border-left: 4px solid var(--color-primary);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-md);
+    margin: var(--space-5) 0;
+    font-size: var(--text-caption);
+  }
+
+  /* ---- Grelha de swatches ----------------------------------------------- */
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-4);
+  }
+  .swatch {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+  }
+  .swatch .fill {
+    height: 96px;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-3);
+  }
+  .swatch .chip {
+    font-size: 0.75rem;
+    padding: 0.15em 0.6em;
+    border-radius: var(--radius-full);
+    font-family: ui-monospace, monospace;
+  }
+  .swatch .body { padding: var(--space-3) var(--space-4) var(--space-4); }
+  .swatch .name { font-size: var(--text-caption); }
+  .swatch .val {
+    font-family: ui-monospace, monospace;
+    font-size: 0.72rem;
+    color: var(--color-muted-foreground);
+    margin-top: 2px;
+    word-break: break-all;
+  }
+  .swatch .ratio {
+    margin-top: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.8rem;
+  }
+  .badge-aa {
+    font-size: 0.7rem;
+    font-family: ui-monospace, monospace;
+    padding: 0.1em 0.5em;
+    border-radius: var(--radius-full);
+  }
+  .badge-aa.pass { background: var(--color-success-soft); color: var(--color-success-soft-foreground); }
+  .badge-aa.fail { background: var(--color-destructive-soft); color: var(--color-destructive-soft-foreground); }
+
+  /* ---- Tipografia (amostras) -------------------------------------------- */
+  .type-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+    align-items: baseline;
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-size: 0.8rem; color: var(--color-muted-foreground); font-family: ui-monospace, monospace; }
+  .t-display { font-family: var(--font-display); font-size: var(--text-display); font-weight: var(--weight-medium); line-height: 1.1; }
+  .t-h1 { font-family: var(--font-display); font-size: var(--text-h1); font-weight: var(--weight-medium); line-height: 1.15; }
+  .t-h2 { font-family: var(--font-display); font-size: var(--text-h2); font-weight: var(--weight-medium); }
+  .t-h3 { font-family: var(--font-display); font-size: var(--text-h3); font-weight: var(--weight-medium); }
+  .t-h4 { font-family: var(--font-display); font-size: var(--text-h4); font-weight: var(--weight-medium); }
+  .t-lead { font-size: var(--text-body-lg); }
+  .t-body { font-size: var(--text-body); }
+  .t-caption { font-size: var(--text-caption); color: var(--color-muted-foreground); }
+
+  /* ---- Escalas visuais (espaço/raio/sombra) ----------------------------- */
+  .scale-grid { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-end; }
+  .scale-item { text-align: center; }
+  .scale-item .swatch-box { background: var(--color-primary); border-radius: var(--radius-sm); }
+  .space-bar { background: var(--color-accent); height: 24px; border-radius: var(--radius-sm); }
+  .radius-box { width: 96px; height: 96px; background: var(--color-surface); border: 1px solid var(--color-border); }
+  .shadow-box { width: 120px; height: 96px; background: var(--color-surface); border-radius: var(--radius-lg); }
+  .scale-label { font-family: ui-monospace, monospace; font-size: 0.75rem; color: var(--color-muted-foreground); margin-top: var(--space-2); }
+
+  /* ---- Componentes ------------------------------------------------------- */
+  .demo { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-bottom: var(--space-4); }
+  .demo-col { display: flex; flex-direction: column; gap: var(--space-4); }
+
+  /* Botões — construídos a partir dos tokens */
+  .btn {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1;
+    padding: 0.75em 1.4em;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background var(--transition-base), box-shadow var(--transition-base);
+  }
+  .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+  .btn:disabled { opacity: var(--disabled-opacity); cursor: not-allowed; }
+
+  .btn-primary { background: var(--color-primary); color: var(--color-primary-foreground); }
+  .btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+  .btn-primary:active:not(:disabled) { background: var(--color-primary-active); }
+
+  .btn-secondary { background: var(--color-secondary); color: var(--color-secondary-foreground); border-color: var(--color-border); }
+  .btn-secondary:hover:not(:disabled) { background: var(--color-secondary-hover); }
+
+  .btn-accent { background: var(--color-accent); color: var(--color-accent-foreground); }
+  .btn-accent:hover:not(:disabled) { background: var(--color-accent-hover); }
+  .btn-accent:active:not(:disabled) { background: var(--color-accent-active); }
+
+  .btn-destructive { background: var(--color-destructive); color: var(--color-destructive-foreground); }
+  .btn-destructive:hover:not(:disabled) { background: oklch(0.46 0.15 29.2); }
+
+  .btn-ghost { background: transparent; color: var(--color-primary); }
+  .btn-ghost:hover:not(:disabled) { background: var(--color-info-soft); }
+
+  /* Links */
+  .prose a { color: var(--color-link); text-underline-offset: 3px; }
+  .prose a:hover { color: var(--color-link-hover); }
+  .prose a:visited { color: var(--color-link-visited); }
+
+  /* Controlos / inputs */
+  .field { display: flex; flex-direction: column; gap: var(--space-2); max-width: 380px; margin-bottom: var(--space-4); }
+  .field label { font-size: var(--text-caption); }
+  .input, .textarea, .select {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--color-foreground);
+    background: var(--color-surface);
+    border: 1px solid var(--color-input);
+    border-radius: var(--radius-md);
+    padding: 0.6em 0.8em;
+    width: 100%;
+  }
+  .input::placeholder, .textarea::placeholder { color: var(--color-muted-foreground); }
+  .input:focus-visible, .textarea:focus-visible, .select:focus-visible {
+    outline: none;
+    border-color: var(--color-ring);
+    box-shadow: var(--focus-ring);
+  }
+  .input:disabled, .textarea:disabled { opacity: var(--disabled-opacity); cursor: not-allowed; background: var(--color-muted); }
+  .check-row { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+  .check-row input { width: 20px; height: 20px; accent-color: var(--color-primary); }
+  .check-row input:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+
+  /* Formulários — marcações auxiliares */
+  .required-mark { color: var(--color-destructive); }
+  .hint { font-size: var(--text-caption); color: var(--color-muted-foreground); margin: 0; }
+  .field-error-msg { font-size: var(--text-caption); color: var(--color-destructive); margin: 0; font-weight: var(--weight-body-bold); }
+  .input.is-invalid, .textarea.is-invalid, .select.is-invalid { border-color: var(--color-destructive); }
+
+  /* Formulários — agrupamento */
+  fieldset.field-group {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin: 0 0 var(--space-5);
+    min-width: 0;
+  }
+  fieldset.field-group legend {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-h4);
+    padding: 0 var(--space-2);
+  }
+
+  /* Formulário exemplo completo */
+  .form-demo {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-6);
+    max-width: 680px;
+  }
+  .form-demo .field { max-width: none; }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-4); }
+  @media (max-width: 640px) { .form-grid-2 { grid-template-columns: 1fr; } }
+  .form-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-5); }
+
+  /* Cards */
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-5);
+    max-width: 340px;
+  }
+  .card h4 { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h4); margin: 0 0 var(--space-2); }
+  .card p { margin: 0 0 var(--space-4); color: var(--color-muted-foreground); font-size: var(--text-caption); }
+  .card .card-accent { height: 4px; background: var(--color-brand-green); border-radius: var(--radius-full); margin-bottom: var(--space-4); width: 48px; }
+
+  /* Badges */
+  .badge {
+    display: inline-flex; align-items: center;
+    font-size: 0.8rem;
+    padding: 0.25em 0.75em;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+  }
+  .badge-info { background: var(--color-info-soft); color: var(--color-info-soft-foreground); }
+  .badge-success { background: var(--color-success-soft); color: var(--color-success-soft-foreground); }
+  .badge-warning { background: var(--color-warning-soft); color: var(--color-warning-soft-foreground); }
+  .badge-error { background: var(--color-destructive-soft); color: var(--color-destructive-soft-foreground); }
+  .badge-solid { background: var(--color-primary); color: var(--color-primary-foreground); }
+
+  /* Alertas (tint + texto forte + barra) */
+  .alert {
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    border-left: 4px solid;
+    margin-bottom: var(--space-4);
+    font-size: var(--text-caption);
+  }
+  .alert-info { background: var(--color-info-soft); color: var(--color-info-soft-foreground); border-color: var(--color-primary); }
+  .alert-success { background: var(--color-success-soft); color: var(--color-success-soft-foreground); border-color: var(--color-success); }
+  .alert-warning { background: var(--color-warning-soft); color: var(--color-warning-soft-foreground); border-color: var(--color-warning); }
+  .alert-error { background: var(--color-destructive-soft); color: var(--color-destructive-soft-foreground); border-color: var(--color-destructive); }
+  .alert strong { font-weight: var(--weight-body-bold); }
+
+  /* Bloco de código "como consumir" */
+  pre.code {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .toc { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-5); font-size: var(--text-caption); }
+  .toc a { color: var(--color-link); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AISA · Design System · brand-04</p>
+    <h1>Sistema de Design</h1>
+    <p>Os tokens reais da marca AISA — cor, tipografia, espaço e componentes — renderizados a partir de <code>tokens/base.css</code>. Sistema 100% personalizado, sem bibliotecas de UI externas. O que vês aqui é exactamente o que o tema WordPress que consuma o base recebe.</p>
+    <nav class="toc">
+      <a href="#sobre">Sobre</a>
+      <a href="#cores">Cores</a>
+      <a href="#tipografia">Tipografia</a>
+      <a href="#espaco">Espaço</a>
+      <a href="#raios">Raios</a>
+      <a href="#sombras">Sombras</a>
+      <a href="#botoes">Botões</a>
+      <a href="#links">Links</a>
+      <a href="#formularios">Formulários</a>
+      <a href="#cards">Cards</a>
+      <a href="#badges">Badges &amp; Estados</a>
+      <a href="#componentes-site">Componentes do site</a>
+      <a href="brand-04-modelos-pagina.html">Modelos de página e teste de fundos</a>
+      <a href="#consumir">Como consumir</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="wrap">
+    <h2 class="section-title">Sobre este sistema</h2>
+    <p class="section-intro">Deriva da identidade visual (<code>brand-03-visual-identity.html</code>) e do brief de requisitos (<code>brand-02-requirements.md</code>). Migrado de <code>proto-1/</code> (aprovado pelo cliente) a 2026-11-07, com valências, fundos de secção (teste) e componentes do site acrescentados. Cada token traça-se de volta à paleta, tipografia ou princípios da marca.</p>
+    <div class="note">
+      <strong>Modo claro apenas.</strong> Por decisão de requisitos (público sénior, que valoriza previsibilidade e legibilidade acima de tudo), este sistema não tem modo escuro — logo, não há alternador claro/escuro. Todos os pares de texto sobre superfície cumprem <strong>WCAG AA</strong>, validado por <code>scripts/check-contrast.mjs</code> e re-calculado ao vivo nesta página.
+    </div>
+    <div class="note">
+      <strong>Design system próprio, alvo WordPress.</strong> Por decisão de requisitos (2026-07-04), este sistema é 100% personalizado — <strong>sem Tailwind CSS, sem shadcn/ui, sem qualquer framework de UI</strong>. Todos os componentes são HTML + CSS nativo construídos a partir dos tokens, prontos a consumir num tema WordPress (ver <code>tokens/wordpress.md</code>).
+    </div>
+  </div>
+</section>
+
+<!-- CORES -->
+<section id="cores">
+  <div class="wrap">
+    <h2 class="section-title">Cores</h2>
+    <p class="section-intro">Tokens OKLCH, semânticos por papel. O rácio de contraste ao lado de cada amostra é calculado <em>neste browser</em> a partir da cor efectivamente aplicada — deve bater certo com o gate de geração.</p>
+
+    <h3 class="block-title">Superfícies e neutros</h3>
+    <div class="swatch-grid" id="grid-neutros"></div>
+
+    <h3 class="block-title">Marca</h3>
+    <div class="swatch-grid" id="grid-marca"></div>
+
+    <h3 class="block-title">Estados semânticos (sólidos)</h3>
+    <div class="swatch-grid" id="grid-semantica"></div>
+
+    <h3 class="block-title">Estados semânticos (suaves — tint + texto forte)</h3>
+    <p class="muted" style="margin-top:calc(var(--space-4) * -1); margin-bottom:var(--space-4); font-size:var(--text-caption);">Modelo calmo para alertas e badges: fundo tingido claro, texto da mesma família cromática. Sénior-friendly e sempre AA.</p>
+    <div class="swatch-grid" id="grid-suave"></div>
+
+    <h3 class="block-title">Valências (superfície + texto)</h3>
+    <p class="muted" style="margin-top:calc(var(--space-4) * -1); margin-bottom:var(--space-4); font-size:var(--text-caption);">Cada valência tem <code>-accent</code> (faixa, ícone; decorativo, nunca texto), a superfície suave e o texto. Os botões não mudam por valência. Aplicação: <code>data-valencia="sad|centro-dia|infancia|generico|cozinha"</code> no elemento.</p>
+    <div class="swatch-grid" id="grid-valencias"></div>
+    <div class="swatch-grid" id="grid-valencias-accent" style="margin-top:var(--space-4);"></div>
+
+    <h3 class="block-title">Fundos de secção — teste (não aprovado)</h3>
+    <div class="note"><strong>Teste pedido pela cliente (2026-11-07).</strong> Duas versões para comparar com a base aprovada, em contexto real: <a href="brand-04-modelos-pagina.html">brand-04-modelos-pagina.html</a> (painel "Fundos das secções"). V1 usa tintas claras; V2 usa 1–2 faixas fortes por página, onde só se usa o botão invertido. Todos os pares passam AA.</div>
+    <div class="swatch-grid" id="grid-fundos"></div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section id="tipografia">
+  <div class="wrap">
+    <h2 class="section-title">Tipografia</h2>
+    <p class="section-intro">Duas famílias por papel: <strong style="font-weight:var(--weight-body-bold)">Fraunces</strong> (display, calor editorial) e <strong style="font-weight:var(--weight-body-bold)">Atkinson Hyperlegible</strong> (corpo, desenhada para baixa visão). A hierarquia vem da mudança de família e do tamanho — nunca do negrito no texto corrido.</p>
+
+    <div class="type-row"><div class="type-meta">display · 60px<br>Fraunces 500</div><div class="t-display">Perto de si</div></div>
+    <div class="type-row"><div class="type-meta">h1 · 48px<br>Fraunces 500</div><div class="t-h1">A cuidar dos seus</div></div>
+    <div class="type-row"><div class="type-meta">h2 · 36px<br>Fraunces 500</div><div class="t-h2">Da infância ao envelhecimento</div></div>
+    <div class="type-row"><div class="type-meta">h3 · 28px<br>Fraunces 500</div><div class="t-h3">As nossas valências</div></div>
+    <div class="type-row"><div class="type-meta">h4 · 22px<br>Fraunces 500</div><div class="t-h4">Candidatura e admissão</div></div>
+    <div class="type-row"><div class="type-meta">lead · 20px<br>Atkinson 400</div><div class="t-lead">Um parágrafo de introdução, um pouco maior, para acolher quem chega à página.</div></div>
+    <div class="type-row"><div class="type-meta">corpo · 18px<br>Atkinson 400</div><div class="t-body">Este é o texto corrido base, nunca abaixo de 18px. Formas de letra desambiguadas, alta legibilidade a qualquer tamanho — uma escolha que serve a promessa de acessibilidade da marca, não só a estética.</div></div>
+    <div class="type-row"><div class="type-meta">legenda · 16px<br>Atkinson 400</div><div class="t-caption">Legenda ou metadado — nunca mais pequeno do que 16px.</div></div>
+  </div>
+</section>
+
+<!-- ESPAÇO -->
+<section id="espaco">
+  <div class="wrap">
+    <h2 class="section-title">Espaçamento</h2>
+    <p class="section-intro">Escala de base 4px. Barras à escala real.</p>
+    <div id="space-scale"></div>
+  </div>
+</section>
+
+<!-- RAIOS -->
+<section id="raios">
+  <div class="wrap">
+    <h2 class="section-title">Raios</h2>
+    <p class="section-intro">Cantos suaves; os cartões seguem os 12px da identidade.</p>
+    <div class="scale-grid" id="radius-scale"></div>
+  </div>
+</section>
+
+<!-- SOMBRAS -->
+<section id="sombras">
+  <div class="wrap">
+    <h2 class="section-title">Sombras</h2>
+    <p class="section-intro">Elevação subtil, tom antracite — coerente com a estética minimalista.</p>
+    <div class="scale-grid" id="shadow-scale"></div>
+  </div>
+</section>
+
+<!-- BOTÕES -->
+<section id="botoes">
+  <div class="wrap">
+    <h2 class="section-title">Botões</h2>
+    <p class="section-intro">Passa o rato e usa o teclado (Tab) para ver <code>:hover</code> e <code>:focus-visible</code>. Cada variante cumpre AA texto↔fundo.</p>
+
+    <h3 class="block-title">Variantes</h3>
+    <div class="demo">
+      <button class="btn btn-primary">Ver valências</button>
+      <button class="btn btn-secondary">Saber mais</button>
+      <button class="btn btn-accent">Doar</button>
+      <button class="btn btn-ghost">Cancelar</button>
+      <button class="btn btn-destructive">Eliminar registo</button>
+    </div>
+
+    <h3 class="block-title">Estados (primária)</h3>
+    <div class="demo">
+      <button class="btn btn-primary">Normal</button>
+      <button class="btn btn-primary" style="background:var(--color-primary-hover)">Hover</button>
+      <button class="btn btn-primary" style="box-shadow:var(--focus-ring)">Focus</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <p class="muted" style="font-size:var(--text-caption)">A primária é o Azul Confiança, intocado. O laranja (Doar) usa texto escuro para cumprir AA — reservado a toques humanos. O verde da marca nunca carrega texto: aparece como acento decorativo (ver cartões).</p>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section id="links">
+  <div class="wrap">
+    <h2 class="section-title">Links</h2>
+    <p class="section-intro">Azul aprofundado (7:1) para contraste reforçado, sempre sublinhados no corpo.</p>
+    <div class="prose t-body" style="max-width:640px">
+      <p>Na AISA acompanhamos as famílias <a href="#links">da sua comunidade</a> ao longo de toda a vida. Podes <a href="#links">conhecer as nossas valências</a> ou <a href="#links">falar connosco</a> a qualquer momento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIOS -->
+<section id="formularios">
+  <div class="wrap">
+    <h2 class="section-title">Formulários</h2>
+    <p class="section-intro">Componentes de formulário para admissão, contacto e donativos — construídos só com HTML e os tokens da marca, sem bibliotecas externas. Foco bem visível (anel azul), alvos generosos, mensagens de erro acolhedoras — nunca alarmistas.</p>
+
+    <h3 class="block-title">Campos de texto</h3>
+    <div class="field">
+      <label for="nome">Nome completo <span class="required-mark" aria-hidden="true">*</span></label>
+      <input class="input" id="nome" type="text" placeholder="Ex.: Maria dos Santos" required>
+    </div>
+    <div class="field">
+      <label for="nif">NIF</label>
+      <input class="input" id="nif" type="text" inputmode="numeric" aria-describedby="nif-hint">
+      <p class="hint" id="nif-hint">Só precisamos do NIF se quiser recibo do donativo.</p>
+    </div>
+    <div class="field">
+      <label for="email-err">Email <span class="required-mark" aria-hidden="true">*</span></label>
+      <input class="input is-invalid" id="email-err" type="email" value="maria.santos@" required aria-invalid="true" aria-describedby="email-err-msg">
+      <p class="field-error-msg" id="email-err-msg">Este email parece incompleto — confirme, por favor.</p>
+    </div>
+    <div class="field">
+      <label for="msg">Mensagem</label>
+      <textarea class="textarea" id="msg" rows="3" placeholder="Escreva aqui..."></textarea>
+    </div>
+    <div class="field">
+      <label for="bloq">Campo desactivado</label>
+      <input class="input" id="bloq" type="text" value="Não editável" disabled>
+    </div>
+
+    <h3 class="block-title">Selecção e escolhas</h3>
+    <div class="field">
+      <label for="valencia">Valência de interesse</label>
+      <select class="select" id="valencia">
+        <option>Creche</option>
+        <option>Centro de dia</option>
+        <option>Apoio domiciliário</option>
+      </select>
+    </div>
+    <fieldset class="field-group" style="max-width:380px">
+      <legend>Como prefere ser contactado?</legend>
+      <div class="check-row"><input type="radio" name="r" id="r1" checked><label for="r1">Por telefone</label></div>
+      <div class="check-row"><input type="radio" name="r" id="r2"><label for="r2">Por email</label></div>
+      <div class="check-row" style="margin-bottom:0"><input type="radio" name="r" id="r3"><label for="r3">Presencialmente, na AISA</label></div>
+    </fieldset>
+    <div class="check-row"><input type="checkbox" id="c1" checked><label for="c1">Autorizo o tratamento dos meus dados (RGPD)</label></div>
+
+    <h3 class="block-title">Formulário exemplo — pedido de contacto</h3>
+    <p class="muted" style="margin-top:calc(var(--space-4) * -1); margin-bottom:var(--space-4); font-size:var(--text-caption);">A marcação completa, tal como entra no tema WordPress: fieldsets com legenda, obrigatórios assinalados, ajuda e erro associados por <code>aria-describedby</code>.</p>
+    <form class="form-demo" onsubmit="return false">
+      <fieldset class="field-group">
+        <legend>Os seus dados</legend>
+        <div class="field">
+          <label for="f-nome">Nome completo <span class="required-mark" aria-hidden="true">*</span></label>
+          <input class="input" id="f-nome" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="f-tel">Telefone</label>
+            <input class="input" id="f-tel" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+            <input class="input" id="f-email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="field-group">
+        <legend>O seu pedido</legend>
+        <div class="field">
+          <label for="f-valencia">Valência de interesse</label>
+          <select class="select" id="f-valencia">
+            <option>Creche</option>
+            <option>Centro de dia</option>
+            <option>Apoio domiciliário</option>
+            <option>Outra / não sei ainda</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Como podemos ajudar? <span class="required-mark" aria-hidden="true">*</span></label>
+          <textarea class="textarea" id="f-msg" rows="4" required aria-describedby="f-msg-hint"></textarea>
+          <p class="hint" id="f-msg-hint">Conte-nos com as suas palavras — respondemos normalmente no prazo de dois dias úteis.</p>
+        </div>
+      </fieldset>
+      <div class="check-row">
+        <input type="checkbox" id="f-rgpd" required>
+        <label for="f-rgpd">Li e aceito a política de privacidade; autorizo o tratamento dos meus dados para este contacto (RGPD). <span class="required-mark" aria-hidden="true">*</span></label>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Enviar pedido</button>
+        <button class="btn btn-secondary" type="reset">Limpar</button>
+      </div>
+    </form>
+    <p class="muted" style="font-size:var(--text-caption); margin-top:var(--space-4)">Campos obrigatórios assinalados com <span class="required-mark">*</span>. O estado de erro usa a borda vermelho terroso + mensagem clara e acolhedora — o anel de foco mantém-se azul em todos os controlos, para previsibilidade.</p>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section id="cards">
+  <div class="wrap">
+    <h2 class="section-title">Cards</h2>
+    <p class="section-intro">Superfície branca sobre fundo quente, borda discreta, sombra suave, raio de 12px.</p>
+    <div class="demo" style="align-items:stretch">
+      <div class="card">
+        <div class="card-accent"></div>
+        <h4>Centro de Dia</h4>
+        <p>Um lugar para os nossos maiores passarem o dia acompanhados, com refeições, actividades e cuidado próximo.</p>
+        <button class="btn btn-primary">Saber mais</button>
+      </div>
+      <div class="card">
+        <div class="card-accent"></div>
+        <h4>Apoio Domiciliário</h4>
+        <p>Levamos o cuidado a casa de quem prefere manter a sua rotina, com a mesma proximidade de sempre.</p>
+        <button class="btn btn-secondary">Contactar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BADGES E ESTADOS -->
+<section id="badges">
+  <div class="wrap">
+    <h2 class="section-title">Badges e estados</h2>
+    <p class="section-intro">Modelo suave para estados — calmo, legível, nunca alarmista. Também há badge sólido para destaques.</p>
+
+    <h3 class="block-title">Badges</h3>
+    <div class="demo">
+      <span class="badge badge-solid">Novo</span>
+      <span class="badge badge-info">Informação</span>
+      <span class="badge badge-success">Admitido</span>
+      <span class="badge badge-warning">Em análise</span>
+      <span class="badge badge-error">Lista de espera</span>
+    </div>
+
+    <h3 class="block-title">Alertas</h3>
+    <div class="alert alert-info"><strong>Informação.</strong> As candidaturas para o próximo ano lectivo abrem em Setembro.</div>
+    <div class="alert alert-success"><strong>Feito.</strong> A tua candidatura foi recebida — entramos em contacto contigo em breve.</div>
+    <div class="alert alert-warning"><strong>Atenção.</strong> Faltam documentos na tua candidatura. Podemos ajudar-te a completá-la.</div>
+    <div class="alert alert-error"><strong>Não foi possível.</strong> Não conseguimos guardar o formulário. Tenta novamente, por favor.</div>
+  </div>
+</section>
+
+<!-- COMPONENTES DO SITE (2026-11-07) -->
+<section id="componentes-site">
+  <div class="wrap">
+    <h2 class="section-title">Componentes do site</h2>
+    <p class="section-intro">Definidos em <code>tokens/components.css</code>, só com variáveis de <code>base.css</code>. O hero com slideshow, o cabeçalho de página, o cabeçalho e o rodapé do site vêem-se em contexto em <a href="brand-04-modelos-pagina.html">brand-04-modelos-pagina.html</a>.</p>
+
+    <h3 class="block-title">Etiqueta e ícone de valência</h3>
+    <div class="demo">
+      <span class="valencia-tag" data-valencia="sad">SAD — Apoio Domiciliário</span>
+      <span class="valencia-tag" data-valencia="centro-dia">Centro de Dia</span>
+      <span class="valencia-tag" data-valencia="infancia">Infância e Juventude</span>
+      <span class="valencia-tag" data-valencia="generico">Genérico</span>
+      <span class="valencia-tag" data-valencia="cozinha">Cozinha</span>
+    </div>
+    <p class="muted" style="font-size:var(--text-caption);">A cor nunca é o único sinal: a etiqueta tem sempre o nome (WCAG 1.4.1).</p>
+
+    <h3 class="block-title">Cartão de serviço</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-5);">
+      <a class="service-card" href="#" data-valencia="centro-dia"><div class="service-card__media"><img src="../proto-2/img/facebook/centro-dia-sala.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Centro de Dia</span><h4 class="service-card__title">Centro de Dia</h4><p class="service-card__text">Apoio durante o dia, com refeições e actividades.</p><span class="service-card__more">Saber mais</span></div></a>
+      <a class="service-card" href="#" data-valencia="sad"><div class="service-card__media"><img src="../proto-2/img/facebook/passeio-mar.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">SAD — Apoio Domiciliário</span><h4 class="service-card__title">Apoio Domiciliário</h4><p class="service-card__text">Vamos a sua casa.</p><span class="service-card__more">Saber mais</span></div></a>
+      <a class="service-card" href="#" data-valencia="infancia"><div class="service-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""></div><div class="service-card__body"><span class="valencia-tag">Infância e Juventude</span><h4 class="service-card__title">ATL e férias</h4><p class="service-card__text">Horários, idades e actividades.</p><span class="service-card__more">Saber mais</span></div></a>
+    </div>
+
+    <h3 class="block-title">Cartão de notícia — imagem em destaque</h3>
+    <div class="news-grid">
+      <a class="news-card news-card--lead" href="#" data-valencia="generico"><div class="news-card__media"><img src="../proto-2/img/facebook/procissao-assuncao.png" alt=""><span class="valencia-tag">Comunidade</span></div><div class="news-card__body"><span class="news-card__date">15 de agosto de 2026</span><h4 class="news-card__title">Procissão de Nossa Senhora da Assunção</h4><p class="news-card__excerpt">A festa da padroeira voltou a juntar utentes, famílias e vizinhos.</p></div></a>
+      <a class="news-card" href="#" data-valencia="infancia"><div class="news-card__media"><img src="../proto-2/img/facebook/atelier-pizza.png" alt=""><span class="valencia-tag">Infância e Juventude</span></div><div class="news-card__body"><span class="news-card__date">2 de julho de 2026</span><h4 class="news-card__title">Atelier de pizzas nas férias do ATL</h4></div></a>
+    </div>
+    <div class="note">Imagem destacada obrigatória (16:10). Sem imagem própria, o tema usa a imagem por defeito da valência — nunca um cartão só de texto. Variante <code>.news-card--lead</code> para a notícia mais recente.</div>
+
+    <h3 class="block-title">Depoimento</h3>
+    <figure class="testimonial" data-valencia="centro-dia" style="margin:0;">
+      <blockquote class="testimonial__quote" style="margin-left:0;margin-right:0;">Aqui, ninguém é só mais um processo.</blockquote>
+      <figcaption class="testimonial__who">Filha de utente · Centro de Dia</figcaption>
+    </figure>
+    <p class="muted" style="font-size:var(--text-caption);">Assinatura por relação e serviço — nunca nomes reais.</p>
+
+    <h3 class="block-title">Faixa de provas</h3>
+    <div class="proof-strip">
+      <div class="proof"><div class="proof__num">30</div><p class="proof__label">anos na Malveira da Serra</p></div>
+      <div class="proof"><div class="proof__num">337</div><p class="proof__label">pessoas apoiadas, em média</p><p class="proof__source">dados de 2025</p></div>
+      <div class="proof"><div class="proof__num">4,5</div><p class="proof__label">no Google</p><p class="proof__source">75 avaliações</p></div>
+    </div>
+
+    <h3 class="block-title">Lista de documentos</h3>
+    <div class="doc-group">
+      <p class="doc-group__title">Relatórios e contas</p>
+      <ul class="doc-list">
+        <li><a href="#"><svg class="doc-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span class="doc-list__name">Relatório e Contas 2025</span><span class="doc-list__meta">PDF · 1,2 MB</span></a></li>
+        <li><a href="#"><svg class="doc-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span class="doc-list__name">Relatório e Contas 2024</span><span class="doc-list__meta">PDF · 1,1 MB</span></a></li>
+      </ul>
+    </div>
+
+    <h3 class="block-title">Item de agenda</h3>
+    <div style="max-width:640px;">
+      <div class="event" data-valencia="infancia"><div class="event__date"><span class="event__day">23</span><span class="event__month">jun</span></div><div><h4 class="event__title">Arraial de São João</h4><p class="event__meta">Sede da AISA · 18h00</p></div></div>
+    </div>
+
+    <h3 class="block-title">Bloco de contacto</h3>
+    <div class="contact-block">
+      <div><p class="contact-block__title">Fale connosco</p><p class="contact-block__text">Ligue-nos e fazemos as contas consigo.</p></div>
+      <a class="contact-block__tel" href="tel:+351214857700">214 857 700</a>
+    </div>
+
+    <h3 class="block-title">Botão invertido (só em faixas fortes — teste V2)</h3>
+    <div class="section--strong-blue" style="padding:var(--space-6);border-radius:var(--radius-lg);">
+      <p style="margin:0 0 var(--space-4);">Sobre fundo de cor forte, o único botão permitido é o invertido.</p>
+      <a class="btn btn-inverse" href="#">Torne-se associado</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMO CONSUMIR -->
+<section id="consumir">
+  <div class="wrap">
+    <h2 class="section-title">Como consumir</h2>
+    <p class="section-intro">O base é a fonte da verdade: CSS nativo, sem build e sem bibliotecas externas. O alvo de implementação é um tema WordPress próprio.</p>
+
+    <h3 class="block-title">1. CSS puro (qualquer página)</h3>
+    <pre class="code">&lt;link rel="stylesheet" href="tokens/base.css"&gt;
+
+.botao {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}</pre>
+
+    <h3 class="block-title">2. Tema WordPress</h3>
+    <pre class="code">// functions.php — os tokens entram antes da folha do tema
+add_action( 'wp_enqueue_scripts', function () {
+  wp_enqueue_style( 'aisa-tokens', get_theme_file_uri( 'assets/css/base.css' ), array(), '1.0' );
+  wp_enqueue_style( 'aisa-theme', get_stylesheet_uri(), array( 'aisa-tokens' ), '1.0' );
+} );</pre>
+    <p class="t-body">Vê <code>tokens/wordpress.md</code> — enfileiramento dos tokens, paleta do editor via <code>theme.json</code> (por referência às variáveis, sem duplicar valores), estilos do editor e integração dos formulários. Os componentes desta página copiam-se para a folha de componentes do tema tal como estão — <strong style="font-weight:var(--weight-body-bold)">sem Tailwind, sem shadcn/ui, sem frameworks de UI</strong>.</p>
+
+    <div class="note">
+      <strong>Validação.</strong> Antes de entregar, corre o gate de contraste:
+      <br><code>node scripts/check-contrast.mjs --tokens tokens/base.css</code>
+      <br><code>node scripts/check-contrast.mjs pairs.json</code>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ===========================================================================
+   Read-out de contraste em tempo real.
+   Lê a cor EFECTIVAMENTE aplicada (getComputedStyle devolve rgb resolvido,
+   mesmo quando o token é oklch), converte para luminância WCAG e calcula o
+   rácio. Mesma fórmula do check-contrast.mjs → os números coincidem.
+   =========================================================================== */
+function resolveColor(cssVar, prop) {
+  // cria um elemento-sonda, aplica a var, lê o rgb resolvido
+  const probe = document.createElement('span');
+  probe.style.cssText = prop + ':var(' + cssVar + ');position:absolute;opacity:0;';
+  document.body.appendChild(probe);
+  const val = getComputedStyle(probe)[prop === 'color' ? 'color' : 'backgroundColor'];
+  probe.remove();
+  return val;
+}
+function parseRGB(str) {
+  const m = str.match(/rgba?\(([^)]+)\)/i);
+  if (!m) return [0,0,0];
+  const p = m[1].split(/[\s,\/]+/).map(Number);
+  return [p[0], p[1], p[2]];
+}
+function chan(c) { c /= 255; return c <= 0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055, 2.4); }
+function lum([r,g,b]) { return 0.2126*chan(r) + 0.7152*chan(g) + 0.0722*chan(b); }
+function ratio(fgVar, bgVar) {
+  const fg = parseRGB(resolveColor(fgVar, 'color'));
+  const bg = parseRGB(resolveColor(bgVar, 'background-color'));
+  const L1 = lum(fg), L2 = lum(bg);
+  const [hi, lo] = L1 >= L2 ? [L1, L2] : [L2, L1];
+  return (hi + 0.05) / (lo + 0.05);
+}
+function oklchOf(cssVar) {
+  // lê o valor textual do token (oklch) do base, para o mostrar
+  return getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim();
+}
+
+/* Definição das amostras: [token de fill, token de texto p/ contraste, rótulo, fundo do rácio] */
+const NEUTROS = [
+  ['--color-background', '--color-foreground', 'background', 'texto principal'],
+  ['--color-surface', '--color-foreground', 'surface', 'texto principal'],
+  ['--color-muted', '--color-muted-foreground', 'muted', 'muted-foreground'],
+  ['--color-foreground', '--color-background', 'foreground', 'sobre fundo'],
+  ['--color-border', '--color-foreground', 'border', '—'],
+  ['--color-input', '--color-foreground', 'input', '—'],
+];
+const MARCA = [
+  ['--color-primary', '--color-primary-foreground', 'primary', 'primary-foreground'],
+  ['--color-secondary', '--color-secondary-foreground', 'secondary', 'secondary-foreground'],
+  ['--color-accent', '--color-accent-foreground', 'accent', 'accent-foreground'],
+  ['--color-brand-green', '--color-primary-foreground', 'brand-green', '(decorativo)'],
+  ['--color-link', '--color-background', 'link', 'sobre fundo'],
+  ['--color-ring', '--color-background', 'ring', '(foco)'],
+];
+const SEMANTICA = [
+  ['--color-success', '--color-success-foreground', 'success', 'success-foreground'],
+  ['--color-warning', '--color-warning-foreground', 'warning', 'warning-foreground'],
+  ['--color-destructive', '--color-destructive-foreground', 'destructive', 'destructive-foreground'],
+];
+const SUAVE = [
+  ['--color-info-soft', '--color-info-soft-foreground', 'info-soft', 'info-soft-foreground'],
+  ['--color-success-soft', '--color-success-soft-foreground', 'success-soft', 'success-soft-foreground'],
+  ['--color-warning-soft', '--color-warning-soft-foreground', 'warning-soft', 'warning-soft-foreground'],
+  ['--color-destructive-soft', '--color-destructive-soft-foreground', 'destructive-soft', 'destructive-soft-foreground'],
+];
+
+function renderSwatches(gridId, defs, showRatio) {
+  const grid = document.getElementById(gridId);
+  defs.forEach(([fillVar, textVar, label, pairLabel]) => {
+    const r = ratio(textVar, fillVar);
+    const pass = r >= 4.5;
+    const div = document.createElement('div');
+    div.className = 'swatch';
+    const chipStyle = 'background:var(' + fillVar + ');color:var(' + textVar + ');';
+    let ratioHtml = '';
+    if (showRatio && pairLabel !== '—' && pairLabel !== '(decorativo)' && pairLabel !== '(foco)') {
+      ratioHtml =
+        '<div class="ratio">' +
+          '<span class="badge-aa ' + (pass ? 'pass' : 'fail') + '">' + (pass ? 'AA ✓' : 'FAIL') + '</span>' +
+          '<span class="muted">' + r.toFixed(2) + ':1 · ' + pairLabel + '</span>' +
+        '</div>';
+    } else if (pairLabel === '(decorativo)' || pairLabel === '(foco)') {
+      ratioHtml = '<div class="ratio"><span class="muted">' + pairLabel + '</span></div>';
+    }
+    div.innerHTML =
+      '<div class="fill" style="background:var(' + fillVar + ')">' +
+        '<span class="chip" style="' + chipStyle + '">Aa</span>' +
+      '</div>' +
+      '<div class="body">' +
+        '<div class="name">' + label + '</div>' +
+        '<div class="val">' + oklchOf(fillVar) + '</div>' +
+        ratioHtml +
+      '</div>';
+    grid.appendChild(div);
+  });
+}
+
+renderSwatches('grid-neutros', NEUTROS, true);
+renderSwatches('grid-marca', MARCA, true);
+renderSwatches('grid-semantica', SEMANTICA, true);
+renderSwatches('grid-suave', SUAVE, true);
+renderSwatches('grid-valencias', [
+  ['--color-valencia-sad', '--color-valencia-sad-foreground', 'valencia-sad (SAD)', 'texto da valência'],
+  ['--color-valencia-centro-dia', '--color-valencia-centro-dia-foreground', 'valencia-centro-dia', 'texto da valência'],
+  ['--color-valencia-infancia', '--color-valencia-infancia-foreground', 'valencia-infancia', 'texto da valência'],
+  ['--color-valencia-generico', '--color-valencia-generico-foreground', 'valencia-generico', 'texto da valência'],
+  ['--color-valencia-cozinha', '--color-valencia-cozinha-foreground', 'valencia-cozinha', 'texto da valência'],
+], true);
+renderSwatches('grid-valencias-accent', [
+  ['--color-valencia-sad-accent', '--color-primary-foreground', 'valencia-sad-accent', '(decorativo)'],
+  ['--color-valencia-centro-dia-accent', '--color-primary-foreground', 'valencia-centro-dia-accent', '(decorativo)'],
+  ['--color-valencia-infancia-accent', '--color-foreground', 'valencia-infancia-accent', '(decorativo)'],
+  ['--color-valencia-generico-accent', '--color-foreground', 'valencia-generico-accent', '(decorativo)'],
+  ['--color-valencia-cozinha-accent', '--color-foreground', 'valencia-cozinha-accent', '(decorativo)'],
+], true);
+renderSwatches('grid-fundos', [
+  ['--color-section-sky', '--color-section-sky-foreground', 'section-sky (V1)', 'texto'],
+  ['--color-section-sage', '--color-section-sage-foreground', 'section-sage (V1)', 'texto'],
+  ['--color-section-sand', '--color-section-sand-foreground', 'section-sand (V1)', 'texto'],
+  ['--color-section-strong-blue', '--color-section-strong-blue-foreground', 'section-strong-blue (V2)', 'texto'],
+  ['--color-section-strong-green', '--color-section-strong-green-foreground', 'section-strong-green (V2)', 'texto'],
+  ['--color-section-strong-orange', '--color-section-strong-orange-foreground', 'section-strong-orange (V2)', 'texto'],
+], true);
+
+/* Escala de espaçamento */
+(function(){
+  const host = document.getElementById('space-scale');
+  ['--space-1','--space-2','--space-3','--space-4','--space-5','--space-6','--space-7','--space-8'].forEach(v=>{
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-2)';
+    row.innerHTML = '<span class="scale-label" style="width:80px;margin:0">'+v.replace('--','')+'</span>'+
+      '<div class="space-bar" style="width:var('+v+')"></div>'+
+      '<span class="scale-label" style="margin:0">'+getComputedStyle(document.documentElement).getPropertyValue(v).trim()+'</span>';
+    host.appendChild(row);
+  });
+})();
+
+/* Escala de raios */
+(function(){
+  const host = document.getElementById('radius-scale');
+  [['--radius-sm','sm'],['--radius-md','md'],['--radius-lg','lg'],['--radius-xl','xl'],['--radius-full','full']].forEach(([v,n])=>{
+    const item = document.createElement('div');
+    item.className = 'scale-item';
+    item.innerHTML = '<div class="radius-box" style="border-radius:var('+v+')"></div><div class="scale-label">'+n+'</div>';
+    host.appendChild(item);
+  });
+})();
+
+/* Escala de sombras */
+(function(){
+  const host = document.getElementById('shadow-scale');
+  [['--shadow-sm','sm'],['--shadow-md','md'],['--shadow-lg','lg']].forEach(([v,n])=>{
+    const item = document.createElement('div');
+    item.className = 'scale-item';
+    item.innerHTML = '<div class="shadow-box" style="box-shadow:var('+v+')"></div><div class="scale-label">'+n+'</div>';
+    host.appendChild(item);
+  });
+})();
+</script>
+
+</body>
+</html>
