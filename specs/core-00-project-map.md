@@ -30,7 +30,7 @@
 | 4 | Marca | `core-04-brand` (router do subprocesso `brand-*`) | `core-04-brand.md` + `brand-*.md` | ☑ Concluído para o lançamento (2026-11-07, modo mínimo; `brand-05` adiado; fundos à espera de decisão da cliente) |
 | 5 | Requisitos funcionais | `core-05-product-owner` | `core-05-prd.md` | ☑ Concluído (2026-11-07) |
 | 6 | Revisão legal | `core-06-legal` | `core-06-legal-requirements.md` | ☑ Concluído (2026-11-07; lacunas G1–G8 incorporadas no PRD, revisão 1) |
-| 7 | Build (ramo B — WordPress) | `core-07-build` (router do ramo `wp-*`) | `core-07-build.md` + `wp-*` | ◐ Em curso (2026-11-07; mapa do ramo criado, próximo: `wp-01-envisioning`) |
+| 7 | Build (ramo B — WordPress) | `core-07-build` (router do ramo `wp-*`) | `core-07-build.md` + `wp-*` | ◐ Em curso (2026-11-07; mapa do ramo criado, próximo: `wp-05-developer` com `wp-04-01-01`) |
 | — | Pedido de alteração *(skill solta, pós-MVP)* | `core-08-change-request` | `core-08-change-request-NN-slug.md` | — |
 | — | Revisão de projeto *(skill solta, reinvocável)* | `core-09-project-reviewer` | `core-09-divergencias-projeto.md` | — |
 | 10 | Documentação | `core-10-documentator` | `docs/documentation.html` | ☐ Não iniciado |
@@ -110,7 +110,7 @@
 - **`brand-04` concluído (2026-11-07):** tokens em `specs/tokens/` (incluindo `components.css` e `theme.json` gerado), modelos de página e teste de fundos (Base / V1 / V2) em `brand-04-modelos-pagina.html`. **Pendente com a cliente:** escolher a versão de fundos; cor de "Saúde e Reabilitação".
 - **`core-05` concluído (2026-11-07):** PRD com MVP, KPIs e MoSCoW. Decisões: serviços espelham o site actual (D1); Cozinha sem página (D2); formulário de contacto (D3); Saúde e Reabilitação = Genérico (D4). Pendentes: ver `core-05-prd.md` §10 (A1–A8; A4 acessos e A6 e-mail de destino bloqueiam).
 - **`core-06` concluído (2026-11-07):** requisitos legais L1–L36. PRD actualizado (revisão 1: F28 e critério 13). **Bloqueiam:** A10 (EPD, para a Política de Privacidade) e A12 (plano do Cookiebot), além de A4 (acessos) e A6 (e-mail dos formulários). Ver `core-05-prd.md` §10.
-- **Próximo passo:** `/wp-01-envisioning` (ver `core-07-build.md`). Objectivo: chegar à **versão demo/alpha** o mais cedo possível, partindo de `specs/tokens/` e `specs/brand-04-modelos-pagina.html`, não do `proto-2/` (ver §4, "Base da demo e do build").
+- **Próximo passo:** `/wp-05-developer` com `wp-04-01-01-ambiente-base.md` (13 specs `wp-04-*` escritas a 2026-11-07; ordem em `core-07-build.md` §3). Objectivo: chegar à **versão demo/alpha** o mais cedo possível, partindo de `specs/tokens/` e `specs/brand-04-modelos-pagina.html`, não do `proto-2/` (ver §4, "Base da demo e do build").
 - **Lacuna resolvida (2026-11-07):** `core-03-marketing.md` foi sincronizado e já mostra `marketing-01` como concluído. Não há lacunas abertas no tronco.
 - **Prazo (2026-11-07):** faltam 8 dias para o lançamento. O operador pediu uma **versão demo/alpha o mais cedo possível** (`marketing-04-go-to-market.md` §2). Seguem-se os modos mínimos registados em §4.
 - **Decisões tomadas nas fases 1 e 2 que afectam as seguintes** (o registo completo está nos ficheiros indicados):

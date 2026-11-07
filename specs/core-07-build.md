@@ -18,10 +18,10 @@
 
 | # | Fase | Skill | Output | Estado |
 |---|---|---|---|---|
-| 1 | Envisioning / faseamento | `wp-01-envisioning` | `wp-01-requirements-phase-XX.md` | ☐ Não iniciado |
-| 2 | Arquitectura | `wp-02-architecture` | `wp-02-architecture.md` | ☐ Não iniciado |
-| 3 | Backlog de páginas | `wp-03-business-analyst` | `wp-03-product-backlog.md` | ☐ Não iniciado |
-| 4 | Specs de implementação | `wp-04-project-manager` | `wp-04-FF-II-slug.md` | ☐ Não iniciado |
+| 1 | Envisioning / faseamento | `wp-01-envisioning` | `wp-01-requirements-phase-01.md` | ☑ Concluído (2026-11-07; fase 01 = MVP; fases 02 e 03 no roadmap) |
+| 2 | Arquitectura | `wp-02-architecture` | `wp-02-architecture.md` | ☑ Concluído (2026-11-07; block theme próprio `aisa`, plugin `aisa-core`, Rank Math) |
+| 3 | Backlog de páginas | `wp-03-business-analyst` | `wp-03-product-backlog.md` | ☑ Concluído (2026-11-07; P01–P30, G01–G06, RF01–RF12, T01–T15; 301 mapeados) |
+| 4 | Specs de implementação | `wp-04-project-manager` | `wp-04-FF-II-slug.md` | ☑ Concluído (2026-11-07; 13 specs: 01-01…01-05, 02-01…02-06, 03-01…03-02) |
 | 5 | Implementação (uma spec de cada vez) | `wp-05-developer` | código em `public_html/wp-content/` + backlog actualizado | ☐ Não iniciado |
 | 6 | Revisão SEO | `wp-06-seo-reviewer` | `wp-06-seo-review.md` | ☐ Não iniciado |
 | 7 | Revisão de segurança | `wp-07-security-reviewer` | `wp-07-security-review.md` | ☐ Não iniciado |
@@ -31,7 +31,7 @@
 
 ## 3. Próximo passo
 
-**Lançar `/wp-01-envisioning`** (manualmente).
+**Lançar `/wp-05-developer`** (manualmente), **uma spec de cada vez, por ordem**: `wp-04-01-01-ambiente-base` → 01-02 → 01-03 → 01-04 → 01-05 (demo M0, 09/11) → 02-01 … 02-06 (beta M1, 12/11; 02-05 antes de 02-06) → 03-01, 03-02 (M2, 14/11). Cada spec tem, na §7, o prompt pronto a usar. Depois do M1: `wp-06`, `wp-07` e `wp-08`. As notas abaixo ficam como contexto.
 
 - **Inputs:**
   - obrigatórios: `core-05-prd.md` (MVP + MoSCoW, revisão 1) e `core-06-legal-requirements.md` (L1–L36);
