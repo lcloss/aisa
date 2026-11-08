@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'AISA_CORE_VERSION', '0.1.0' );
 define( 'AISA_CORE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'AISA_CORE_URL', plugin_dir_url( __FILE__ ) );
-foreach ( array( 'post-types', 'taxonomies', 'meta', 'valencia', 'featured-required', 'schema-event', 'blocks', 'gtm' ) as $aisa_file ) {
+foreach ( array( 'post-types', 'taxonomies', 'meta', 'valencia', 'featured-required', 'schema-event', 'blocks', 'gtm', 'forms' ) as $aisa_file ) {
 	require_once AISA_CORE_PATH . 'includes/class-' . $aisa_file . '.php';
 }
 require_once AISA_CORE_PATH . 'includes/helpers.php';
@@ -25,6 +25,7 @@ Featured_Required::boot();
 Schema_Event::boot();
 Blocks::boot();
 GTM::boot();
+Forms::boot();
 register_activation_hook( __FILE__, static function () {
 	Post_Types::register();
 	Taxonomies::register();

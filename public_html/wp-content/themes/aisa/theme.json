@@ -360,6 +360,11 @@
   },
   "templateParts": [
     {
+      "name": "topbar",
+      "title": "Barra de topo",
+      "area": "header"
+    },
+    {
       "name": "header",
       "title": "Cabeçalho",
       "area": "header"

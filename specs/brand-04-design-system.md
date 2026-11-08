@@ -103,7 +103,9 @@ Cada valência tem três tokens. O `data-valencia` define `--v-accent`, `--v-sur
 
 | Componente | Classe | Requisito que cumpre |
 |---|---|---|
-| Cabeçalho do site | `.site-header`, `.site-nav` | Telefone sempre visível (D5); menu compacto em telemóvel |
+| Barra de topo | `.topbar` | Telefone (sempre em telemóvel), e-mail, morada (→ Contactos) e redes sociais; fora do cabeçalho fixo. Em ecrãs estreitos esconde morada e depois e-mail |
+| Cabeçalho do site | `.site-header`, `.site-nav`, `.site-header__cta` | Botão de destaque "Torne-se sócio" (o telefone passou para a barra de topo); menu compacto em telemóvel; sem botão "Contactos" a duplicar o item do menu |
+| Pesquisa no site | `.site-header__search`, `.site-search` | Botão-lupa no cabeçalho abre painel por baixo (Escape fecha e devolve o foco); sem JS, o botão leva à página de resultados |
 | **Hero com slideshow** | `.hero`, `.slideshow` | Feedback do cliente: texto ao lado, slideshow **maior** (cerca de 60% e pelo menos 440 px, até à margem direita). Passagem manual por defeito; o botão de reprodução vira pausa (WCAG 2.2.2); respeita `prefers-reduced-motion`; em telemóvel a imagem vem primeiro |
 | **Cabeçalho de página com imagem** | `.page-header` | Feedback do cliente / D1: todas as páginas abrem com fotografia; cartão branco com a faixa da cor da valência |
 | Etiqueta / ícone de valência | `.valencia-tag`, `.valencia-icon` | D3: cor e nome |

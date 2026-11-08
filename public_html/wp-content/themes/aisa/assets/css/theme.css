@@ -89,9 +89,15 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .aisa-main > .alignfull { margin-inline: calc(-1 * var(--space-5)); }
 .site-header__inner { max-width: var(--wp--style--global--wide-size); position: relative; flex-wrap: nowrap; }
 .site-header__inner > * { margin-block: 0; }
-.site-header__tel { order: 2; }
+.site-header__cta { order: 2; }
+.site-header__search { order: 2; }
 .site-header__menu { order: 3; }
-.aisa-tel-short, .aisa-menu-toolbar { display: none; }
+.wp-site-blocks > .topbar, .wp-site-blocks > .topbar + .site-header { margin-block: 0; }
+.topbar__inner, .site-search__inner { max-width: var(--wp--style--global--wide-size); }
+.topbar a:focus-visible { outline: 2px solid var(--color-background); box-shadow: none; }
+.site-search .wp-block-search__label { font-size: var(--text-caption); color: var(--color-muted-foreground); }
+.site-search .wp-block-search__input { flex: 1 1 16rem; }
+.aisa-menu-toolbar { display: none; }
 .aisa-menu-panel { margin: 0; min-width: 0; }
 .site-nav { display: block; }
 .site-nav .wp-block-navigation__container { gap: var(--space-4); }
@@ -113,7 +119,8 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .site-nav .aisa-nav-group > .wp-block-navigation__submenu-container { position: static; padding: 0; min-width: 0; display: flex; border: 0; }
 .site-nav .aisa-nav-group > .wp-block-navigation__submenu-container li { width: 100%; }
 .site-footer a { display: inline-block; min-height: calc(var(--space-5) + var(--space-5)); padding-block: var(--space-2); }
-.site-footer p { margin-block: 0 var(--space-3); }
+.site-footer p, .site-footer__address { margin-block: 0 var(--space-3); }
+.site-footer__address { font-style: normal; }
 .site-footer__grid { max-width: var(--wp--style--global--wide-size); }
 .site-footer__legal { max-width: var(--wp--style--global--wide-size); }
 .page-header__box { border-radius: 0; box-shadow: none; }
@@ -159,7 +166,6 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
  body.aisa-menu-open { overflow: hidden; }
 }
 @media (max-width: 560px) {
- .site-header__tel .aisa-tel-number { display: none; } .site-header__tel .aisa-tel-short { display: inline; }
  .site-header__inner { flex-wrap: nowrap; }
  .site-header__logo img { max-width: 100%; width: auto; }
  .site-header__logo { min-width: 0; }

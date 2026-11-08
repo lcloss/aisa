@@ -12,7 +12,10 @@ defined( 'ABSPATH' ) || exit;
 <!-- wp:html -->
 <a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logo.svg' ) ); ?>" width="382" height="189" alt="<?php esc_attr_e( 'AISA — início', 'aisa' ); ?>"></a>
 <!-- /wp:html -->
-<!-- wp:aisa/telefone {"variante":"botao","className":"site-header__tel"} /-->
+<!-- wp:html -->
+<a class="btn btn-secondary site-header__search" href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" aria-label="<?php esc_attr_e( 'Pesquisar no site', 'aisa' ); ?>"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
+<a class="btn btn-accent site-header__cta" href="<?php echo esc_url( aisa_page_url( 'torne-se-socio' ) ); ?>"><?php esc_html_e( 'Torne-se sócio', 'aisa' ); ?></a>
+<!-- /wp:html -->
 <!-- wp:html -->
 <button class="btn btn-secondary site-header__menu" aria-expanded="false" aria-controls="aisa-menu-panel" hidden><?php esc_html_e( 'Menu', 'aisa' ); ?></button>
 <div id="aisa-menu-panel" class="aisa-menu-panel">
@@ -42,3 +45,10 @@ echo aisa_nav_link( __( 'Notícias', 'aisa' ), 'noticias' ) . aisa_nav_link( __(
 <!-- wp:html --></div><!-- /wp:html -->
 </div>
 <!-- /wp:group -->
+<!-- wp:html -->
+<div id="aisa-search-panel" class="site-search" hidden><div class="site-search__inner">
+<!-- /wp:html -->
+<!-- wp:search {"label":"Pesquisar no site","placeholder":"Ex.: Centro de Dia, voluntariado, regulamento…","buttonText":"Pesquisar","className":"site-search__form"} /-->
+<!-- wp:html -->
+</div></div>
+<!-- /wp:html -->
