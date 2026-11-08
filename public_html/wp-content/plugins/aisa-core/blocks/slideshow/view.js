@@ -14,13 +14,13 @@
   }
   function stop() {
    clearInterval(timer); timer = null; playing = false;
-   play.textContent = play.dataset.start; play.setAttribute('aria-label', play.dataset.start);
+   play.setAttribute('aria-label', play.dataset.start); play.setAttribute('data-playing', 'false');
   }
   root.querySelector('[data-prev]').addEventListener('click', function () { stop(); show(current - 1); });
   root.querySelector('[data-next]').addEventListener('click', function () { stop(); show(current + 1); });
   play.addEventListener('click', function () {
    if (playing) { stop(); return; }
-   playing = true; play.textContent = play.dataset.stop; play.setAttribute('aria-label', play.dataset.stop);
+   playing = true; play.setAttribute('aria-label', play.dataset.stop); play.setAttribute('data-playing', 'true');
    timer = setInterval(function () { show(current + 1); }, 6000);
   });
   // Focus/hover stops rotation until the visitor explicitly starts it again.

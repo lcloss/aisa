@@ -30,7 +30,7 @@ first.next.handlers.click(); assert.equal(first.status.textContent,'2 de 3');
 assert.equal(second.status.textContent,'1 de 2','independent slideshows');
 first.prev.handlers.click(); assert.equal(first.status.textContent,'1 de 3');
 first.prev.handlers.click(); assert.equal(first.status.textContent,'3 de 3','wrap around');
-first.play.handlers.click(); assert.equal(timers.size,1); assert.equal(first.play.textContent,'Pausar');
+first.play.handlers.click(); assert.equal(timers.size,1); assert.equal(first.play.attrs['aria-label'],'Pausar'); assert.equal(first.play.attrs['data-playing'],'true');
 [...timers.values()][0](); assert.equal(first.status.textContent,'1 de 3');
 first.play.handlers.click(); assert.equal(timers.size,0); assert.equal(first.play.attrs['aria-label'],'Reproduzir');
 first.play.handlers.click(); first.root.handlers.focusin(); assert.equal(timers.size,0,'stop on focus');

@@ -49,9 +49,15 @@ foreach ( $photos as $key => $alt ) {
 	$media[ $key ] = $id;
 	update_option( 'aisa_demo_media', $media, false );
 }
-update_option( 'aisa_demo_slides', array_map( static function ( $key ) use ( $media, $photos ) {
-	return array( 'id' => $media[ $key ], 'alt' => $photos[ $key ] );
-}, array( 'passeio-mar', 'procissao-assuncao', 'atelier-pizza', 'cerimonia-bandeiras' ) ), false );
+$captions = array(
+	'passeio-mar' => 'Passeio ao mar — Centro de Dia',
+	'procissao-assuncao' => 'Festa de Nossa Senhora da Assunção',
+	'atelier-pizza' => 'Atelier de pizzas',
+	'cerimonia-bandeiras' => 'Cerimónia das bandeiras',
+);
+update_option( 'aisa_demo_slides', array_map( static function ( $key ) use ( $media, $photos, $captions ) {
+	return array( 'id' => $media[ $key ], 'alt' => $photos[ $key ], 'caption' => $captions[ $key ] );
+}, array_keys( $captions ) ), false );
 
 /** Never overwrite a pre-existing page that this seed does not own. */
 function aisa_demo_post( $key, $data, $valencia = '', $source = '' ) {
