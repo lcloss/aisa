@@ -1,0 +1,9 @@
+<?php
+/**
+ * Title: Notícias recentes
+ * Slug: aisa/noticias-recentes
+ * Categories: aisa
+ */
+defined( 'ABSPATH' ) || exit;
+?>
+<!-- wp:group {"className":"aisa-section is-style-section-surface aisa-news","layout":{"type":"default"},"align":"full","tagName":"section"} --><section class="wp-block-group alignfull aisa-section is-style-section-surface aisa-news"><!-- wp:group {"className":"aisa-section__inner","layout":{"type":"default"}} --><div class="wp-block-group aisa-section__inner"><!-- wp:paragraph {"className":"aisa-eyebrow"} --><p class="aisa-eyebrow"><?php esc_html_e( 'A vida na AISA', 'aisa' ); ?></p><!-- /wp:paragraph --><!-- wp:heading {"level":2,"className":""} --><h2 class="wp-block-heading "><?php esc_html_e( 'Histórias para partilhar', 'aisa' ); ?></h2><!-- /wp:heading --><!-- wp:query {"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false}} --><div class="wp-block-query"><!-- wp:post-template {"className":"aisa-news-list"} --><!-- wp:group {"className":"news-card aisa-valencia-scope","layout":{"type":"default"},"tagName":"article"} --><article class="wp-block-group news-card aisa-valencia-scope"><!-- wp:post-featured-image {"className":"news-card__media"} /--><!-- wp:group {"className":"news-card__body","layout":{"type":"default"}} --><div class="wp-block-group news-card__body"><!-- wp:post-terms {"term":"aisa_valencia","className":"valencia-tag"} /--><!-- wp:post-date {"format":"j F Y"} /--><!-- wp:post-title {"isLink":true,"level":3,"className":"news-card__title"} /--></div><!-- /wp:group --></article><!-- /wp:group --><!-- /wp:post-template --></div><!-- /wp:query --><!-- wp:paragraph --><p><a href="<?php echo esc_url( home_url( '/noticias/' ) ); ?>"><?php esc_html_e( 'Ver todas as notícias', 'aisa' ); ?></a></p><!-- /wp:paragraph --></div><!-- /wp:group --></section><!-- /wp:group -->

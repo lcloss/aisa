@@ -179,7 +179,7 @@ O Git versiona **só** `wp-content/themes/aisa/`, `wp-content/plugins/aisa-core/
 | Componentes do site (`components.css`) | Carregado no front-end e no editor. Os padrões e templates usam as classes: `.site-header`, `.hero`, `.page-header`, `.service-card`, `.news-card(--lead)`, `.testimonial`, `.proof-strip`, `.doc-list`, `.event`, `.contact-block`, `.site-footer`, `.section--*` |
 | Valências | Termo `aisa_valencia` → `data-valencia` no `<body>` (páginas e eventos) ou no cartão (listagens) → `--v-accent`, `--v-surface`, `--v-fg` |
 | Botões | Estilos do bloco `core/button`: primary (omissão), secondary, accent e inverse. O inverse só aparece dentro de `section--strong-*` |
-| Fundos de secção | Estilos do bloco `core/group`: `section--plain`, `--surface` e `--muted` (**Base**, por omissão). V1 e V2 só entram depois da decisão da cliente (A1); nessa altura acrescentam-se os estilos e os tokens ao `theme.json` |
+| Fundos de secção | Estilos do bloco `core/group`: `section--plain`, `--surface` e `--muted` (**Base**, por omissão). **A1 = V2 (2026-11-08):** acrescentam-se `section-strong-blue` e `section-strong-green` — provas e "Participar" no início, depoimentos na página de serviço, "Não sabe qual escolher?" em Serviços (1–2 faixas por página, texto branco, botão invertido) |
 | Formulários (CF7) | O CSS do tema aplica os estilos do `components.css` (input, textarea, select, checkbox, radio, ajuda e erro) às classes do CF7. A folha de estilos própria do CF7 é desactivada (`wpcf7_load_css` = false) |
 | Cookiebot | Banner com cores e tipografia dos tokens. "Aceitar" e "Rejeitar" com o mesmo estilo (L20). Testado com axe (KS3) |
 | Ícones de valência | SVG de linha do `brand-03`, dentro do tema (`assets/icons/`) |
@@ -278,7 +278,7 @@ O `wp-06-seo-reviewer` verifica esta tabela página a página.
 
 | # | Questão | Bloqueia |
 |---|---|---|
-| A1 | Fundos de secção (Base / V1 / V2) | Não: Base por omissão |
+| A1 | Fundos de secção (Base / V1 / V2) | ✅ Decidido 2026-11-08: **V2 — faixas fortes** |
 | A4 | Acessos (WordPress actual, alojamento) | Migração com metadados, 301 completos, `wp-09` |
 | A6 | Caixa de e-mail de destino e credenciais SMTP | Teste real dos formulários (critério 6) |
 | A9 | Registo no Livro de Reclamações | Só a ligação no rodapé |

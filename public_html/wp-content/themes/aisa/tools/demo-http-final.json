@@ -1,0 +1,29 @@
+{
+  "requests": [
+    {
+      "route": "/",
+      "status": "200"
+    },
+    {
+      "route": "/centro-de-dia/",
+      "status": "200"
+    },
+    {
+      "route": "/noticias/",
+      "status": "200"
+    },
+    {
+      "route": "/noticias-aisa/novo-servico-terapia-ocupacional/",
+      "status": "200"
+    },
+    {
+      "route": "/agenda/",
+      "status": "200"
+    },
+    {
+      "route": "/agenda/festa-natal/",
+      "status": "200"
+    }
+  ],
+  "debugLogBytesAdded": 0
+}

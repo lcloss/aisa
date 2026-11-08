@@ -52,7 +52,7 @@
 |---|---|---|
 | A4 | Acessos ao WordPress actual, ao alojamento, à Meta e ao Brevo | `wp-02` (infra) e migração de conteúdos, `wp-09` |
 | A6 | E-mail de destino dos formulários | formulários de contacto e de voluntariado (`wp-05`) |
-| A10 | Encarregado de protecção de dados (EPD) | Política de Privacidade |
+| A10 | Encarregado de protecção de dados (EPD). **Parcial (2026-11-08):** a política actual indica EPD contactável pela morada postal da AISA. Falta confirmar a designação e a comunicação à CNPD, e definir um e-mail de contacto (recomendado). Ver `core-06` §8, Q1 | Política de Privacidade |
 | A12 | Plano do Cookiebot | consentimento de cookies e GA4 com Consent Mode v2 |
 | — | Versão de fundos (Base / V1 / V2) e cor de "Saúde e Reabilitação" | `theme.json` final (`wp-02` / `wp-05`) |
 

@@ -1,0 +1,16 @@
+from PIL import Image, ImageDraw, ImageFont
+from pathlib import Path
+root=Path('public_html/wp-content/themes/aisa')
+im=Image.new('RGB',(1200,600),'#faf9f6'); d=ImageDraw.Draw(im)
+font=lambda n: ImageFont.truetype('C:/Windows/Fonts/arial.ttf',n)
+d.text((60,35),'Malveira da Serra',(36,40,40),font=font(42))
+d.text((60,92),'Localização esquemática · sem escala',(75,75,75),font=font(25))
+d.line([(0,390),(1200,390)],fill='#d8d7d2',width=75)
+d.line([(0,390),(1200,390)],fill='white',width=60)
+d.text((70,373),'Rua de Cascais',(50,50,50),font=font(28))
+d.line([(755,320),(755,390)],fill='#155c91',width=6)
+d.ellipse((730,280,780,330),fill='#155c91')
+d.text((610,200),'AISA · n.º 877',(30,65,90),font=font(38))
+d.text((60,500),'Rua de Cascais, n.º 877 · 2755-162 Alcabideche',(36,40,40),font=font(30))
+d.text((60,550),'Consulte o percurso na ligação «Abrir no Google Maps».',(70,70,70),font=font(25))
+im.save(root/'assets/img/mapa-aisa.png',optimize=True)

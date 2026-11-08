@@ -116,3 +116,13 @@ Manual: envio real dos dois formulários; ver a caixa de destino e os cabeçalho
 /wp-05-developer Implementa specs/wp-04-02-03-formularios.md.
 CF7 + WP Mail SMTP (credenciais em wp-config, fora do Git) + WP Armour + Turnstile nativo do CF7. Cria os formulários Voluntariado e Contacto exactamente com os campos e textos RGPD de §3 (sem dados de saúde/NIF/nascimento/morada, consentimento não pré-marcado, "pelo menos um contacto"), sem guardar envios (nada de Flamingo/log de e-mails). Sem a A6, usa o SMTP local do Laragon e deixa RF01/RF02/T07/T08 em 🔄; com envio real, marca-os ✅ em wp-03-product-backlog.md.
 ```
+
+## 8. Registo de plugins e implementação — 08/11/2026
+
+| Plugin | Versão local | Configuração nesta fatia |
+|---|---|---|
+| Contact Form 7 | 6.1.7 | Ativo; Voluntariado e Contacto; Turnstile nativo com chaves de teste; sem armazenamento nem autoresposta |
+| WP Mail SMTP | 4.10.3 | Ativo; SMTP Mailpit `127.0.0.1:1025`; constantes fora do Git; registo/conteúdo de e-mails e diagnósticos impedidos |
+| WP Armour (`honeypot`) | 2.4.02 | Ativo; integração automática com CF7; mensagem de erro em PT-PT |
+
+Sem A6: RF01/RF02/T07/T08 em 🔄. P24/P25 em rascunho. Snippet mínimo em `aisa-core/includes/class-forms.php` para validação conjunta, Reply-To condicional, acessibilidade e ausência de diagnósticos persistentes do SMTP; foco em `assets/js/forms.js`. Procedimento e evidência: [`VERIFICATION-FORMS.md`](../public_html/wp-content/plugins/aisa-core/VERIFICATION-FORMS.md). A lista global de hardening T14 continua pendente.

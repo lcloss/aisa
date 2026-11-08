@@ -1,0 +1,25 @@
+<fieldset><legend>Os seus dados</legend>
+<p><label for="voluntariado-nome">Nome (obrigatório)</label>
+[text* nome id:voluntariado-nome autocomplete:name]</p>
+<p><label for="voluntariado-telefone">Telefone</label>
+[tel telefone id:voluntariado-telefone autocomplete:tel]</p>
+<p><label for="voluntariado-email">E-mail</label>
+[email email id:voluntariado-email autocomplete:email]
+<span id="voluntariado-contacto-ajuda" class="form-help">Indique pelo menos um: telefone ou e-mail.</span></p>
+</fieldset>
+<fieldset><legend>Disponibilidade (obrigatório)</legend>
+[checkbox* disponibilidade use_label_element "Dias úteis de manhã" "Dias úteis de tarde" "Fins de semana" "Pontualmente, em eventos"]
+</fieldset>
+<fieldset><legend>Área de interesse (obrigatório)</legend>
+[radio area use_label_element default:1 "Envelhecimento" "Infância e Juventude" "Eventos" "Outra"]
+</fieldset>
+<p><label for="voluntariado-mensagem">Mensagem (opcional)</label>
+[textarea mensagem id:voluntariado-mensagem]</p>
+<fieldset aria-describedby="voluntariado-idade-ajuda"><legend>Tem 18 anos ou mais? (obrigatório)</legend>
+[radio maior18 use_label_element "Sim" "Não"]
+<p id="voluntariado-idade-ajuda" class="form-help">Se tiver menos de 18 anos, precisamos da autorização dos pais; entramos em contacto.</p>
+</fieldset>
+[acceptance consentimento] Li a informação sobre os meus dados e aceito que a AISA me contacte sobre voluntariado. [/acceptance]
+<p class="form-rgpd">A AISA usa estes dados só para responder à sua candidatura a voluntário e guarda-os até 24 meses ou até ao fim da colaboração. Saiba mais na <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+[turnstile language:pt appearance:interaction-only]
+[submit "Enviar candidatura"]

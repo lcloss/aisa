@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-08T16:36:25.040Z",
+  "results": [
+    {
+      "width": 360,
+      "path": "/servicos/",
+      "status": 200,
+      "version": "4.10.3",
+      "violations": [],
+      "overflow": false,
+      "h1": 1,
+      "broken": [],
+      "failures": []
+    },
+    {
+      "width": 360,
+      "path": "/centro-de-dia/",
+      "status": 200,
+      "version": "4.10.3",
+      "violations": [],
+      "overflow": false,
+      "h1": 1,
+      "broken": [],
+      "failures": []
+    },
+    {
+      "width": 360,
+      "path": "/contactos/",
+      "status": 200,
+      "version": "4.10.3",
+      "violations": [],
+      "overflow": false,
+      "h1": 1,
+      "broken": [],
+      "failures": []
+    },
+    {
+      "width": 360,
+      "path": "/documentos/",
+      "status": 200,
+      "version": "4.10.3",
+      "violations": [],
+      "overflow": false,
+      "h1": 1,
+      "broken": [],
+      "failures": []
+    },
+    {
+      "width": 360,
+      "path": "/voluntariado/",
+      "status": 200,
+      "version": "4.10.3",
+      "violations": [],
+      "overflow": false,
+      "h1": 1,
+      "broken": [],
+      "failures": []
+    }
+  ],
+  "links": [
+    {
+      "url": "http://aisa.wordpress.test/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/?s=",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/torne-se-socio/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/centro-de-dia/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/servico-apoio-domiciliario/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/novas-instalacoes/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/atividades-de-animacao-e-de-apoio-a-familia/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/componente-de-apoio-a-familia/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/atividades-de-enriquecimento-curricular/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/saude-e-reabilitacao/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/candidaturas/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/protocolos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/servicos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/quem-somos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/equipa-tecnica/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/orgaos-sociais/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/parcerias/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/documentos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/apoie-a-nossa-causa/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/voluntariado/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/noticias/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/agenda/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/contactos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/politica-de-privacidade/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/politica-de-cookies/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/termos/",
+      "status": 200
+    },
+    {
+      "url": "http://aisa.wordpress.test/declaracao-de-acessibilidade/",
+      "status": 200
+    }
+  ],
+  "emptyLinks": 0,
+  "native": []
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/slideshow",
+  "title": "Slideshow",
+  "category": "aisa",
+  "icon": "heart",
+  "textdomain": "aisa",
+  "attributes": {
+    "slides": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "label": {
+      "type": "string",
+      "default": "Fotografias da AISA"
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js",
+  "style": "file:./style.css"
+}

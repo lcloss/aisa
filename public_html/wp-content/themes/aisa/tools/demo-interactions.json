@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "slideshow manual, reduced-motion",
+    "menu modal, ciclo de Tab, Escape e foco",
+    "uma ligação, alt vazio e time por notícia",
+    "Centro de Dia: cor e horário",
+    "agenda: 3 eventos por ordem",
+    "evento: início, fim e local"
+  ]
+}

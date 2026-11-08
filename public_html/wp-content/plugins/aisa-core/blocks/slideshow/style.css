@@ -1,0 +1,7 @@
+/* Structure only: the theme supplies all colours and component styling. */
+.slideshow:not([data-enhanced]) .slideshow__slide { position: relative; inset: auto; opacity: 1; }
+.slideshow [hidden] { display: none !important; }
+.slideshow[data-enhanced] .slideshow__track { position: absolute; inset: 0; }
+.slideshow__btn--play .slideshow__icon-pause, .slideshow__btn--play[data-playing="true"] .slideshow__icon-play { display: none; }
+.slideshow__btn--play[data-playing="true"] .slideshow__icon-pause { display: block; }
+@media (prefers-reduced-motion: reduce) { .slideshow .slideshow__slide { transition: none; animation: none; } }

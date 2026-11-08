@@ -1,0 +1,15 @@
+<fieldset><legend>Os seus dados</legend>
+<p><label for="contacto-nome">Nome (obrigatório)</label>
+[text* nome id:contacto-nome autocomplete:name]</p>
+<p><label for="contacto-telefone">Telefone</label>
+[tel telefone id:contacto-telefone autocomplete:tel]</p>
+<p><label for="contacto-email">E-mail</label>
+[email email id:contacto-email autocomplete:email]
+<span id="contacto-contacto-ajuda" class="form-help">Indique pelo menos um: telefone ou e-mail.</span></p>
+</fieldset>
+<p><label for="contacto-mensagem">Mensagem (obrigatório)</label>
+[textarea* mensagem id:contacto-mensagem]</p>
+[acceptance consentimento] Li a informação sobre os meus dados e aceito que a AISA me contacte para responder ao meu pedido. [/acceptance]
+<p class="form-rgpd">A AISA usa estes dados só para responder ao seu pedido e guarda-os até 12 meses. Saiba mais na <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+[turnstile language:pt appearance:interaction-only]
+[submit "Enviar mensagem"]
