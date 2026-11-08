@@ -1,0 +1,1127 @@
+[
+  {
+    "width": 360,
+    "path": "/",
+    "status": 200,
+    "lcp": 952,
+    "overflow": false,
+    "h1": [
+      "Perto de si, a cuidar dos seus."
+    ],
+    "headings": [
+      "H1:Perto de si, a cuidar dos seus.",
+      "H2:Uma comunidade. Muitas vidas.",
+      "H2:Ao seu lado, em cada fase.",
+      "H3:Envelhecimento",
+      "H3:Infância e Juventude",
+      "H3:Saúde e Reabilitação",
+      "H2:Histórias para partilhar",
+      "H3:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H3:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H3:[DEMO] Cozinheira – Recrutamento",
+      "H3:[DEMO] Inscrições abertas para o ATL de Natal 2024",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Há muitas formas de estar perto.",
+      "H3:Torne-se sócio",
+      "H3:Consignação do IRS",
+      "H3:Voluntariado",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 360,
+    "path": "/centro-de-dia/",
+    "status": 200,
+    "lcp": 448,
+    "overflow": false,
+    "h1": [
+      "Centro de Dia"
+    ],
+    "headings": [
+      "H1:Centro de Dia",
+      "H2:Para quem é",
+      "H2:O que inclui",
+      "H3:Alimentação",
+      "H3:Higiene Pessoal",
+      "H3:Tratamento de Roupa",
+      "H3:Cuidados de Saúde",
+      "H3:Cuidados de Imagem",
+      "H3:Transporte",
+      "H3:Atividades Diárias",
+      "H3:Apoio Multidisciplinar",
+      "H2:Horário e condições",
+      "H2:Como aceder",
+      "H2:Vamos conversar",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 360,
+    "path": "/noticias/",
+    "status": 200,
+    "lcp": 452,
+    "overflow": false,
+    "h1": [
+      "Notícias"
+    ],
+    "headings": [
+      "H1:Notícias",
+      "H2:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H2:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:[DEMO] Cozinheira – Recrutamento",
+      "H2:[DEMO] Inscrições abertas para o ATL de Natal 2024"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 360,
+    "path": "/noticias-aisa/novo-servico-terapia-ocupacional/",
+    "status": 200,
+    "lcp": 424,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Novo Serviço – Terapia Ocupacional"
+    ],
+    "headings": [
+      "H1:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 360,
+    "path": "/agenda/",
+    "status": 200,
+    "lcp": 424,
+    "overflow": false,
+    "h1": [
+      "Agenda"
+    ],
+    "headings": [
+      "H1:Agenda",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 360,
+    "path": "/agenda/festa-natal/",
+    "status": 200,
+    "lcp": 412,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Festa de Natal"
+    ],
+    "headings": [
+      "H1:[DEMO] Festa de Natal"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/",
+    "status": 200,
+    "lcp": 788,
+    "overflow": false,
+    "h1": [
+      "Perto de si, a cuidar dos seus."
+    ],
+    "headings": [
+      "H1:Perto de si, a cuidar dos seus.",
+      "H2:Uma comunidade. Muitas vidas.",
+      "H2:Ao seu lado, em cada fase.",
+      "H3:Envelhecimento",
+      "H3:Infância e Juventude",
+      "H3:Saúde e Reabilitação",
+      "H2:Histórias para partilhar",
+      "H3:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H3:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H3:[DEMO] Cozinheira – Recrutamento",
+      "H3:[DEMO] Inscrições abertas para o ATL de Natal 2024",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Há muitas formas de estar perto.",
+      "H3:Torne-se sócio",
+      "H3:Consignação do IRS",
+      "H3:Voluntariado",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/centro-de-dia/",
+    "status": 200,
+    "lcp": 572,
+    "overflow": false,
+    "h1": [
+      "Centro de Dia"
+    ],
+    "headings": [
+      "H1:Centro de Dia",
+      "H2:Para quem é",
+      "H2:O que inclui",
+      "H3:Alimentação",
+      "H3:Higiene Pessoal",
+      "H3:Tratamento de Roupa",
+      "H3:Cuidados de Saúde",
+      "H3:Cuidados de Imagem",
+      "H3:Transporte",
+      "H3:Atividades Diárias",
+      "H3:Apoio Multidisciplinar",
+      "H2:Horário e condições",
+      "H2:Como aceder",
+      "H2:Vamos conversar",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/noticias/",
+    "status": 200,
+    "lcp": 464,
+    "overflow": false,
+    "h1": [
+      "Notícias"
+    ],
+    "headings": [
+      "H1:Notícias",
+      "H2:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H2:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:[DEMO] Cozinheira – Recrutamento",
+      "H2:[DEMO] Inscrições abertas para o ATL de Natal 2024"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/noticias-aisa/novo-servico-terapia-ocupacional/",
+    "status": 200,
+    "lcp": 508,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Novo Serviço – Terapia Ocupacional"
+    ],
+    "headings": [
+      "H1:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/agenda/",
+    "status": 200,
+    "lcp": 408,
+    "overflow": false,
+    "h1": [
+      "Agenda"
+    ],
+    "headings": [
+      "H1:Agenda",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "path": "/agenda/festa-natal/",
+    "status": 200,
+    "lcp": 472,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Festa de Natal"
+    ],
+    "headings": [
+      "H1:[DEMO] Festa de Natal"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "block",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/",
+    "status": 200,
+    "lcp": 824,
+    "overflow": false,
+    "h1": [
+      "Perto de si, a cuidar dos seus."
+    ],
+    "headings": [
+      "H1:Perto de si, a cuidar dos seus.",
+      "H2:Uma comunidade. Muitas vidas.",
+      "H2:Ao seu lado, em cada fase.",
+      "H3:Envelhecimento",
+      "H3:Infância e Juventude",
+      "H3:Saúde e Reabilitação",
+      "H2:Histórias para partilhar",
+      "H3:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H3:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H3:[DEMO] Cozinheira – Recrutamento",
+      "H3:[DEMO] Inscrições abertas para o ATL de Natal 2024",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Há muitas formas de estar perto.",
+      "H3:Torne-se sócio",
+      "H3:Consignação do IRS",
+      "H3:Voluntariado",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/centro-de-dia/",
+    "status": 200,
+    "lcp": 564,
+    "overflow": false,
+    "h1": [
+      "Centro de Dia"
+    ],
+    "headings": [
+      "H1:Centro de Dia",
+      "H2:Para quem é",
+      "H2:O que inclui",
+      "H3:Alimentação",
+      "H3:Higiene Pessoal",
+      "H3:Tratamento de Roupa",
+      "H3:Cuidados de Saúde",
+      "H3:Cuidados de Imagem",
+      "H3:Transporte",
+      "H3:Atividades Diárias",
+      "H3:Apoio Multidisciplinar",
+      "H2:Horário e condições",
+      "H2:Como aceder",
+      "H2:Vamos conversar",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/noticias/",
+    "status": 200,
+    "lcp": 452,
+    "overflow": false,
+    "h1": [
+      "Notícias"
+    ],
+    "headings": [
+      "H1:Notícias",
+      "H2:[DEMO] A AISA conta agora com um Centro de Ensino Estruturado",
+      "H2:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:[DEMO] Cozinheira – Recrutamento",
+      "H2:[DEMO] Inscrições abertas para o ATL de Natal 2024"
+    ],
+    "broken": [],
+    "news": 4,
+    "lead": 1,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/noticias-aisa/novo-servico-terapia-ocupacional/",
+    "status": 200,
+    "lcp": 512,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Novo Serviço – Terapia Ocupacional"
+    ],
+    "headings": [
+      "H1:[DEMO] Novo Serviço – Terapia Ocupacional",
+      "H2:Próximos encontros",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família",
+      "H2:Não sabe por onde começar?"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/agenda/",
+    "status": 200,
+    "lcp": 412,
+    "overflow": false,
+    "h1": [
+      "Agenda"
+    ],
+    "headings": [
+      "H1:Agenda",
+      "H2:[DEMO] Aniversário da AISA",
+      "H2:[DEMO] Festa de Natal",
+      "H2:[DEMO] Atelier de Natal em família"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "path": "/agenda/festa-natal/",
+    "status": 200,
+    "lcp": 464,
+    "overflow": false,
+    "h1": [
+      "[DEMO] Festa de Natal"
+    ],
+    "headings": [
+      "H1:[DEMO] Festa de Natal"
+    ],
+    "broken": [],
+    "news": 0,
+    "lead": 0,
+    "fonts": [
+      {
+        "family": "Fraunces",
+        "status": "error"
+      },
+      {
+        "family": "Fraunces",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "error"
+      },
+      {
+        "family": "Atkinson Hyperlegible",
+        "status": "unloaded"
+      }
+    ],
+    "nav": [
+      {
+        "c": "items-justified-left site-nav wp-block-navigation is-content-justification-left is-layout-flex wp-container-core-navigation-is-layout-b192c3d7 wp-block-navigation-is-layout-flex",
+        "display": "flex",
+        "direction": "row"
+      },
+      {
+        "c": "wp-block-navigation__container items-justified-left site-nav wp-block-navigation",
+        "display": "flex",
+        "direction": "row"
+      }
+    ],
+    "errors": []
+  }
+]

@@ -1,0 +1,382 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "$comment": "Fusão manual: specs/tokens/theme.json gerado + extras de wp-04-01-02 §3 (layout, fontes locais, restrições de blocos e template parts). Preservar paleta e escalas ao regenerar.",
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "custom": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "palette": [
+        {
+          "slug": "background",
+          "name": "Fundo",
+          "color": "#FDFCFA"
+        },
+        {
+          "slug": "surface",
+          "name": "Branco",
+          "color": "#FFFFFF"
+        },
+        {
+          "slug": "foreground",
+          "name": "Texto",
+          "color": "#2B2A28"
+        },
+        {
+          "slug": "muted",
+          "name": "Cinza claro",
+          "color": "#F4F2EF"
+        },
+        {
+          "slug": "muted-foreground",
+          "name": "Texto secundário",
+          "color": "#6B6862"
+        },
+        {
+          "slug": "primary",
+          "name": "Azul Confiança",
+          "color": "#1B75BC"
+        },
+        {
+          "slug": "accent",
+          "name": "Laranja Próximo",
+          "color": "#E87721"
+        },
+        {
+          "slug": "brand-green",
+          "name": "Verde Enraizado",
+          "color": "#2E9A47"
+        },
+        {
+          "slug": "link",
+          "name": "Ligação",
+          "color": "#035894"
+        },
+        {
+          "slug": "valencia-sad-accent",
+          "name": "SAD — acento",
+          "color": "#1B75BC"
+        },
+        {
+          "slug": "valencia-sad",
+          "name": "SAD — superfície",
+          "color": "#E8F1F9"
+        },
+        {
+          "slug": "valencia-sad-foreground",
+          "name": "SAD — texto",
+          "color": "#155C94"
+        },
+        {
+          "slug": "valencia-centro-dia-accent",
+          "name": "Centro de Dia — acento",
+          "color": "#2E9A47"
+        },
+        {
+          "slug": "valencia-centro-dia",
+          "name": "Centro de Dia — superfície",
+          "color": "#E9F5EC"
+        },
+        {
+          "slug": "valencia-centro-dia-foreground",
+          "name": "Centro de Dia — texto",
+          "color": "#1E6B31"
+        },
+        {
+          "slug": "valencia-infancia-accent",
+          "name": "Infância — acento",
+          "color": "#E87721"
+        },
+        {
+          "slug": "valencia-infancia",
+          "name": "Infância — superfície",
+          "color": "#FDF0E6"
+        },
+        {
+          "slug": "valencia-infancia-foreground",
+          "name": "Infância — texto",
+          "color": "#9A4A0F"
+        },
+        {
+          "slug": "valencia-generico-accent",
+          "name": "Genérico — acento",
+          "color": "#B8B3AA"
+        },
+        {
+          "slug": "valencia-cozinha-accent",
+          "name": "Cozinha — acento",
+          "color": "#8A857D"
+        },
+        {
+          "slug": "valencia-cozinha",
+          "name": "Cozinha — superfície",
+          "color": "#EFEDE9"
+        },
+        {
+          "slug": "valencia-cozinha-foreground",
+          "name": "Cozinha — texto",
+          "color": "#4A4743"
+        }
+      ],
+      "text": false
+    },
+    "typography": {
+      "customFontSize": false,
+      "defaultFontSizes": false,
+      "fontFamilies": [
+        {
+          "slug": "display",
+          "name": "Fraunces (títulos)",
+          "fontFamily": "'Fraunces', Georgia, 'Times New Roman', serif",
+          "fontFace": [
+            {
+              "fontFamily": "Fraunces",
+              "fontStyle": "normal",
+              "fontWeight": "400 500",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/fraunces-normal.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Fraunces",
+              "fontStyle": "italic",
+              "fontWeight": "400 500",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/fraunces-italic.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "body",
+          "name": "Atkinson Hyperlegible (corpo)",
+          "fontFamily": "'Atkinson Hyperlegible', system-ui, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Atkinson Hyperlegible",
+              "fontStyle": "normal",
+              "fontWeight": "400",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/atkinson-400-normal.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Atkinson Hyperlegible",
+              "fontStyle": "italic",
+              "fontWeight": "400",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/atkinson-400-italic.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Atkinson Hyperlegible",
+              "fontStyle": "normal",
+              "fontWeight": "700",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/atkinson-700-normal.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Atkinson Hyperlegible",
+              "fontStyle": "italic",
+              "fontWeight": "700",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/atkinson-700-italic.woff2"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "caption",
+          "name": "caption",
+          "size": "1rem"
+        },
+        {
+          "slug": "body",
+          "name": "body",
+          "size": "1.125rem"
+        },
+        {
+          "slug": "body-lg",
+          "name": "body-lg",
+          "size": "1.25rem"
+        },
+        {
+          "slug": "h4",
+          "name": "h4",
+          "size": "1.375rem"
+        },
+        {
+          "slug": "h3",
+          "name": "h3",
+          "size": "1.75rem"
+        },
+        {
+          "slug": "h2",
+          "name": "h2",
+          "size": "2.25rem"
+        },
+        {
+          "slug": "h1",
+          "name": "h1",
+          "size": "3rem"
+        },
+        {
+          "slug": "display",
+          "name": "display",
+          "size": "3.75rem"
+        }
+      ],
+      "fontStyle": false
+    },
+    "spacing": {
+      "units": [
+        "px",
+        "rem",
+        "%"
+      ],
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        {
+          "slug": "1",
+          "name": "Espaço 1",
+          "size": "0.25rem"
+        },
+        {
+          "slug": "2",
+          "name": "Espaço 2",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "3",
+          "name": "Espaço 3",
+          "size": "0.75rem"
+        },
+        {
+          "slug": "4",
+          "name": "Espaço 4",
+          "size": "1rem"
+        },
+        {
+          "slug": "5",
+          "name": "Espaço 5",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "6",
+          "name": "Espaço 6",
+          "size": "2rem"
+        },
+        {
+          "slug": "7",
+          "name": "Espaço 7",
+          "size": "3rem"
+        },
+        {
+          "slug": "8",
+          "name": "Espaço 8",
+          "size": "4rem"
+        },
+        {
+          "slug": "9",
+          "name": "Espaço 9",
+          "size": "6rem"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1200px"
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": []
+    },
+    "border": {
+      "radius": false
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "radius": false
+        },
+        "color": {
+          "background": false,
+          "text": false,
+          "gradients": []
+        }
+      },
+      "core/heading": {
+        "color": {
+          "text": false
+        }
+      },
+      "core/paragraph": {
+        "color": {
+          "text": false
+        }
+      },
+      "core/group": {
+        "border": {
+          "radius": false
+        }
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--color-background)",
+      "text": "var(--color-foreground)"
+    },
+    "typography": {
+      "fontFamily": "var(--font-body)",
+      "fontSize": "var(--text-body)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--font-display)",
+          "fontWeight": "500"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--color-link)"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Cabeçalho",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Rodapé",
+      "area": "footer"
+    }
+  ],
+  "customTemplates": [
+    {
+      "name": "page-servico",
+      "title": "Página de serviço",
+      "postTypes": [
+        "page"
+      ]
+    }
+  ]
+}

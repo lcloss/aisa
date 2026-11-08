@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/provas",
+  "title": "Provas",
+  "category": "aisa",
+  "icon": "heart",
+  "textdomain": "aisa",
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object"
+      }
+    },
+    "ano": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}

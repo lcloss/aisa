@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/documentos",
+  "title": "Documentos",
+  "category": "aisa",
+  "icon": "heart",
+  "textdomain": "aisa",
+  "attributes": {
+    "tipos": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "valencia": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}

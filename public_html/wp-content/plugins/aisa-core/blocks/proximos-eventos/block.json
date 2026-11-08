@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/proximos-eventos",
+  "title": "Próximos eventos",
+  "category": "aisa",
+  "icon": "heart",
+  "textdomain": "aisa",
+  "attributes": {
+    "quantidade": {
+      "type": "number",
+      "default": 3
+    },
+    "valencia": {
+      "type": "string",
+      "default": ""
+    },
+    "mostrarLigacao": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}

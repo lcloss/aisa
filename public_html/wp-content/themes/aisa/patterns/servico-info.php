@@ -1,0 +1,9 @@
+<?php
+/**
+ * Title: Informação prática do serviço
+ * Slug: aisa/servico-info
+ * Categories: aisa
+ */
+defined( 'ABSPATH' ) || exit;
+?>
+<!-- wp:group {"className":"aisa-service-info","layout":{"type":"default"},"tagName":"aside"} --><aside class="wp-block-group aisa-service-info"><!-- wp:heading {"level":2,"className":""} --><h2 class="wp-block-heading "><?php esc_html_e( 'Vamos conversar', 'aisa' ); ?></h2><!-- /wp:heading --><!-- wp:paragraph --><p><?php if ( is_page( 'centro-de-dia' ) ) { esc_html_e( 'Dias úteis das 8h30 às 18h00', 'aisa' ); } else { esc_html_e( 'Para confirmar o horário e as condições deste serviço, fale connosco.', 'aisa' ); } ?></p><!-- /wp:paragraph --><!-- wp:aisa/telefone {"variante":"grande"} /--><!-- wp:paragraph --><p><?php esc_html_e( 'Rua de Cascais, n.º 877 · Malveira da Serra · 2755-162 Alcabideche', 'aisa' ); ?></p><!-- /wp:paragraph --></aside><!-- /wp:group -->

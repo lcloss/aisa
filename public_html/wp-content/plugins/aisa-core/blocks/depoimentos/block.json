@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/depoimentos",
+  "title": "Depoimentos",
+  "category": "aisa",
+  "icon": "heart",
+  "textdomain": "aisa",
+  "attributes": {
+    "quantidade": {
+      "type": "number",
+      "default": 1
+    },
+    "valencia": {
+      "type": "string",
+      "default": ""
+    },
+    "ordem": {
+      "type": "string",
+      "default": "recente",
+      "enum": [
+        "aleatoria",
+        "recente"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}

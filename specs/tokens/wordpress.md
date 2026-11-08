@@ -114,3 +114,7 @@ node scripts/check-contrast.mjs --tokens tokens/base.css
 node scripts/check-contrast.mjs pairs.json
 node scripts/build-theme-json.mjs   # regenera theme.json
 ```
+
+## Tema `aisa`: gerado + extras
+
+O `public_html/wp-content/themes/aisa/theme.json` é uma fusão manual do ficheiro gerado `specs/tokens/theme.json` com os extras de `wp-04-01-02` §3: layout 720/1200 px, `fontFace` local, restrições de blocos e template parts. A origem está documentada no `$comment` do tema. Ao regenerar, preservar os extras e não alterar a paleta nem as escalas geradas.
