@@ -98,12 +98,16 @@
 }
 
 /* ---- Hero com slideshow (feedback: texto ao lado, slideshow MAIOR) ------ */
-.hero { display: grid; grid-template-columns: var(--hero-text-ratio) var(--hero-media-ratio); min-height: var(--hero-min-height); }
-.hero__text { display: flex; flex-direction: column; justify-content: center; padding: var(--space-8) var(--space-7) var(--space-8) max(var(--space-5), calc((100vw - 1240px) / 2 + var(--space-5))); }
+/* Hero contido: respeita as mesmas margens (1200px + gutter) do resto do site,
+   com respiro entre o menu e a faixa seguinte; foto com os 4 cantos iguais.
+   O 100% resolve contra o .aisa-main (que já desconta 2×space-5 de padding),
+   daí o 2× para alinhar com o logótipo e o texto das secções. */
+.hero { display: grid; grid-template-columns: var(--hero-text-ratio) var(--hero-media-ratio); gap: var(--space-7); align-items: center; padding: var(--space-7) max(var(--space-5), calc((100% - 1200px) / 2 + 2 * var(--space-5))) var(--space-8); }
+.hero__text { display: flex; flex-direction: column; justify-content: center; padding: 0; }
 .hero__title { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: clamp(2.25rem, 4vw, var(--text-display)); line-height: var(--leading-tight); margin: 0 0 var(--space-4); }
 .hero__lead { font-size: var(--text-body-lg); color: var(--color-muted-foreground); margin: 0 0 var(--space-6); max-width: 34ch; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-.slideshow { position: relative; overflow: hidden; border-bottom-left-radius: var(--radius-xl); min-height: var(--hero-min-height); background: var(--color-muted); }
+.slideshow { position: relative; overflow: hidden; border-radius: var(--radius-media); min-height: var(--hero-min-height); background: var(--color-muted); }
 .slideshow__slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 600ms ease; }
 .slideshow__slide[aria-hidden="false"] { opacity: 1; }
 .slideshow__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -118,9 +122,9 @@
 .slideshow__btn:hover { background: color-mix(in oklch, var(--color-surface) 18%, transparent); }
 .slideshow__btn:focus-visible { outline: 2px solid var(--color-surface); outline-offset: 0; box-shadow: none; }
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .slideshow { order: -1; min-height: 300px; border-radius: 0; }
-  .hero__text { padding: var(--space-6) var(--space-4); }
+  .hero { grid-template-columns: 1fr; gap: var(--space-6); padding: var(--space-5) var(--space-4) var(--space-7); }
+  .slideshow { order: -1; min-height: 300px; }
+  .hero__text { padding: 0; }
 }
 @media (max-width: 560px) {
   /* Pouca largura: legenda numa linha própria por cima dos controlos. */

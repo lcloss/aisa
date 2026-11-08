@@ -98,12 +98,13 @@
 }
 
 /* ---- Hero com slideshow (feedback: texto ao lado, slideshow MAIOR) ------ */
-.hero { display: grid; grid-template-columns: var(--hero-text-ratio) var(--hero-media-ratio); min-height: var(--hero-min-height); }
-.hero__text { display: flex; flex-direction: column; justify-content: center; padding: var(--space-8) var(--space-7) var(--space-8) max(var(--space-5), calc((100vw - 1240px) / 2 + var(--space-5))); }
+/* Hero contido nas margens do site (1200px + gutter), com respiro em cima/baixo. */
+.hero { display: grid; grid-template-columns: var(--hero-text-ratio) var(--hero-media-ratio); gap: var(--space-7); align-items: center; padding: var(--space-7) max(var(--space-5), calc((100% - 1200px) / 2 + 2 * var(--space-5))) var(--space-8); }
+.hero__text { display: flex; flex-direction: column; justify-content: center; padding: 0; }
 .hero__title { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: clamp(2.25rem, 4vw, var(--text-display)); line-height: var(--leading-tight); margin: 0 0 var(--space-4); }
 .hero__lead { font-size: var(--text-body-lg); color: var(--color-muted-foreground); margin: 0 0 var(--space-6); max-width: 34ch; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-.slideshow { position: relative; overflow: hidden; border-bottom-left-radius: var(--radius-xl); min-height: var(--hero-min-height); background: var(--color-muted); }
+.slideshow { position: relative; overflow: hidden; border-radius: var(--radius-media); min-height: var(--hero-min-height); background: var(--color-muted); }
 .slideshow__slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 600ms ease; }
 .slideshow__slide[aria-hidden="false"] { opacity: 1; }
 .slideshow__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -116,9 +117,9 @@
 .slideshow__btn { width: 48px; height: 48px; border-radius: var(--radius-full); border: 0; background: var(--color-surface); color: var(--color-foreground); font-size: 1.25rem; cursor: pointer; box-shadow: var(--shadow-md); }
 .slideshow__btn:focus-visible, .slideshow__dot:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .slideshow { order: -1; min-height: 300px; border-radius: 0; }
-  .hero__text { padding: var(--space-6) var(--space-4); }
+  .hero { grid-template-columns: 1fr; gap: var(--space-6); padding: var(--space-5) var(--space-4) var(--space-7); }
+  .slideshow { order: -1; min-height: 300px; }
+  .hero__text { padding: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .slideshow__slide { transition: none; } }
 
