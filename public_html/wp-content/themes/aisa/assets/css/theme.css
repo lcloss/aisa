@@ -29,7 +29,7 @@
 .aisa-news-list .news-card--lead { grid-column: auto; grid-template-columns: 3fr 2fr; }
 .aisa-news-list .news-card__media { margin: 0; }
 .aisa-news-list .news-card__body { padding: var(--space-4) 0; }
-.aisa-news-list .news-card--lead .news-card__body { padding: var(--space-7); }
+.aisa-news-list .news-card--lead .news-card__body { margin-block-start: 0; padding: 0 var(--space-7) var(--space-7); justify-content: flex-start; }
 .news-card__title { margin-top: var(--space-3); }
 .news-card__title a { display: inline-block; min-height: 44px; color: var(--color-foreground); text-underline-offset: .15em; }
 .news-card .wp-block-post-date { margin-top: var(--space-3); font-size: var(--text-caption); }
