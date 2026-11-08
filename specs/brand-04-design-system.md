@@ -188,7 +188,7 @@ Pares **excluídos por regra:** o botão laranja sobre faixa forte azul ou verde
 
 ## 7. Pendentes
 
-- **Decisão da cliente sobre os fundos:** Base, V1 ou V2. Depois, limpar os tokens não usados e fixar as classes nos modelos.
+- ~~**Decisão da cliente sobre os fundos:**~~ ✅ **V2 — faixas fortes** (2026-11-08). Aplicada no tema WordPress (estilos de grupo `section-strong-blue` / `section-strong-green`). Pendente: limpar os tokens não usados (V1 `sky/sage/sand` e `strong-orange`).
 - **Cor de "Saúde e Reabilitação":** o sistema de valências do cliente não a define. Nos modelos está como **Genérico**. A confirmar com o cliente.
 - **Imagens por defeito por valência** (para notícias e páginas sem fotografia): escolher no arquivo da AISA.
 - **Menu de telemóvel:** o botão "Menu" é só ilustrativo. O comportamento (painel ou gaveta, foco, tecla Esc) define-se no ramo `wp-*`.

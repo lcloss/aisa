@@ -30,12 +30,19 @@ function aisa_register_styles() {
 	foreach ( array( 'primary' => __( 'Primário', 'aisa' ), 'secondary' => __( 'Secundário', 'aisa' ), 'accent' => __( 'Acento', 'aisa' ), 'inverse' => __( 'Invertido', 'aisa' ) ) as $name => $label ) {
 		register_block_style( 'core/button', array( 'name' => $name, 'label' => $label, 'is_default' => 'primary' === $name ) );
 	}
-	foreach ( array( 'plain' => __( 'Fundo', 'aisa' ), 'surface' => __( 'Superfície', 'aisa' ), 'muted' => __( 'Suave', 'aisa' ) ) as $name => $label ) {
+	foreach ( array( 'plain' => __( 'Fundo', 'aisa' ), 'surface' => __( 'Superfície', 'aisa' ), 'muted' => __( 'Suave', 'aisa' ), 'strong-blue' => __( 'Faixa forte azul', 'aisa' ), 'strong-green' => __( 'Faixa forte verde', 'aisa' ) ) as $name => $label ) {
 		register_block_style( 'core/group', array( 'name' => 'section-' . $name, 'label' => $label ) );
 	}
 	register_block_style( 'core/image', array( 'name' => 'media', 'label' => __( 'Fotografia', 'aisa' ) ) );
 }
 add_action( 'init', 'aisa_register_styles' );
+
+/** A testimonial band without published testimonials must not leave an empty coloured strip. */
+add_filter( 'render_block_core/group', static function ( $html, $block ) {
+	$class = $block['attrs']['className'] ?? '';
+	if ( str_contains( $class, 'aisa-testimonial-band' ) && ! str_contains( $html, 'testimonial__quote' ) ) { return ''; }
+	return $html;
+}, 10, 2 );
 
 /** Filterable by aisa-core when defaults per service become available. */
 function aisa_header_image_url( $post_id = 0 ) {

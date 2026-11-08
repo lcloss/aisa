@@ -41,4 +41,4 @@ foreach ( $groups as [ $icon, $title, $intro, $services ] ) {
 	}
 	echo aisa_page_group( $heading . aisa_page_group( $cards, 'aisa-service-cards' ), 'aisa-service-group', 'section' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped block helpers.
 }
-echo aisa_page_group( aisa_page_heading( __( 'Não sabe qual escolher? Ligue-nos', 'aisa' ) ) . '<!-- wp:aisa/telefone {"variante":"grande"} /-->', 'section--muted aisa-service-callout' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+echo aisa_page_group( aisa_page_heading( __( 'Não sabe qual escolher? Ligue-nos', 'aisa' ) ) . '<!-- wp:aisa/telefone {"variante":"grande"} /-->', 'is-style-section-strong-blue aisa-service-callout' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

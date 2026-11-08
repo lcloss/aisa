@@ -243,7 +243,7 @@
 .section--sky  { background: var(--color-section-sky);  color: var(--color-section-sky-foreground); }
 .section--sage { background: var(--color-section-sage); color: var(--color-section-sage-foreground); }
 .section--sand { background: var(--color-section-sand); color: var(--color-section-sand-foreground); }
-/* TESTE V2 — faixas fortes (não aprovado). Só .btn-inverse; texto todo na cor -foreground. */
+/* V2 — faixas fortes (aprovada 2026-11-08, decisão A1). Só .btn-inverse; texto todo na cor -foreground. */
 .section--strong-blue   { background: var(--color-section-strong-blue);   color: var(--color-section-strong-blue-foreground); }
 .section--strong-green  { background: var(--color-section-strong-green);  color: var(--color-section-strong-green-foreground); }
 .section--strong-orange { background: var(--color-section-strong-orange); color: var(--color-section-strong-orange-foreground); }

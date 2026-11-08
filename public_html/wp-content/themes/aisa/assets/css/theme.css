@@ -135,6 +135,17 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .is-style-section-plain { background: var(--color-background); }
 .is-style-section-surface { background: var(--color-surface); }
 .is-style-section-muted { background: var(--color-muted); }
+/* Fundos V2 (aprovada): 1–2 faixas fortes por página, azul ou verde. Texto branco; só botão invertido (o laranja falha 3:1 sobre estas cores). */
+.is-style-section-strong-blue { background: var(--color-section-strong-blue); color: var(--color-section-strong-blue-foreground); }
+.is-style-section-strong-green { background: var(--color-section-strong-green); color: var(--color-section-strong-green-foreground); }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) :is(h1,h2,h3,h4,.aisa-eyebrow,.proof__num,.proof__label,.proof__source,.contact-block__text) { color: inherit; }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) a:not(.btn):not(.wp-block-button__link) { color: inherit; text-decoration: underline; text-underline-offset: .15em; }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) :is(.btn-primary,.btn-secondary,.btn-accent,.wp-block-button__link) { background: var(--color-surface); color: var(--color-primary-active); border-color: var(--color-surface); }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) :is(.btn-primary,.btn-secondary,.btn-accent,.wp-block-button__link):hover { background: var(--color-muted); }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) :focus-visible { outline: 2px solid var(--color-surface); outline-offset: 3px; box-shadow: none; }
+/* O cartão do depoimento mantém fundo branco e texto antracite dentro da faixa. */
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) .testimonial { background: var(--color-surface); color: var(--color-foreground); padding: var(--space-7) var(--space-6); }
+:is(.is-style-section-strong-blue,.is-style-section-strong-green) .testimonial__who { color: var(--color-muted-foreground); }
 .is-style-media img { border-radius: var(--radius-media); }
 /* Composition gate: separate content with space, reserving radii for photos and controls. */
 .service-card,.news-card,.contact-block,.doc-list,.card { border: 0; border-radius: 0; box-shadow: none; }

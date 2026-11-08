@@ -259,7 +259,7 @@ Todas as outras páginas do sitemap actual mantêm o slug (`wp-02` §3.3).
 
 | # | Questão | Afecta | Bloqueia |
 |---|---|---|---|
-| A1 | Fundos de secção (Base / V1 / V2) | P01, P02 | Não (Base) |
+| A1 | Fundos de secção (Base / V1 / V2) | P01, P02 | ✅ V2 (2026-11-08) |
 | A2 | Nome oficial do CEE | P10 | Só a menção ao CEE |
 | A6 | E-mail de destino dos formulários | RF01, RF02 | Teste real |
 | A7 | Regulamentos por serviço, além dos três conhecidos | P03, RF08 | Não |
