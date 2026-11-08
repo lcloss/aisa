@@ -114,13 +114,13 @@ Os textos legais são da AISA. A agência entrega a estrutura e um rascunho para
 
 ## 8. Questões a validar com a AISA ou com um advogado
 
-1. Há EPD designado? Qual o contacto? (L7)
+1. ~~Há EPD designado? Qual o contacto? (L7)~~ **Respondida com ressalvas (2026-11-08).** A Política de Privacidade do site actual diz que há EPD e que se contacta pela morada postal do responsável (Rua de Cascais, n.º 877, Malveira da Serra, 2755-162 Alcabideche). Cumpre o mínimo do art. 37.º, n.º 7. Ressalvas: **[VALIDAR]** com a AISA que o EPD está de facto designado e comunicado à CNPD, porque o texto parece de modelo; recomenda-se um e-mail próprio (`rgpd@`/`epd@` ou o geral) para facilitar o exercício dos direitos (art. 12.º, n.º 2; WP243).
 2. A AISA está registada no Livro de Reclamações Eletrónico? (G1)
 3. O DL 83/2018 aplica-se à AISA? (L32) Não bloqueia: aplica-se WCAG AA na mesma.
 4. Aplica-se a obrigação de informação sobre RAL (Lei 144/2015)? (L18)
 5. Prazos de conservação dos formulários e idade mínima no voluntariado. (L4, L5)
 6. Plano e orçamento do Cookiebot. (L23)
-7. NIPC e morada oficial para a informação do prestador. (L17)
+7. NIPC e morada oficial para a informação do prestador. (L17) **Parcial (2026-11-08):** morada confirmada pela Política de Privacidade actual (Rua de Cascais, n.º 877, Malveira da Serra, 2755-162 Alcabideche). Falta o **NIPC**. A Política de Privacidade nova deve usar a denominação completa ("AISA — Associação de Apoio Social Nossa Senhora da Assunção") e não só "AISA" (L14).
 
 ## Fontes consultadas
 

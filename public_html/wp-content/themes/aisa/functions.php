@@ -60,10 +60,10 @@ add_action( 'wp_body_open', 'aisa_skip_link', 0 );
 // The theme supplies the first focusable link and a consistent target in every template.
 remove_action( 'wp_footer', 'the_block_template_skip_link' );
 
-/** Use existing pages; missing destinations remain placeholders until 02-04. */
+/** Resolve existing pages, retaining a stable destination during migration. */
 function aisa_page_url( $slug ) {
 	$page = get_page_by_path( $slug );
-	return $page ? get_permalink( $page ) : '#';
+	return $page ? get_permalink( $page ) : home_url( '/' . sanitize_title( $slug ) . '/' );
 }
 
 /** Native block serialization keeps menus editable in the Site Editor. */
@@ -94,3 +94,4 @@ function aisa_navigation_controller( $content, $block ) {
 add_filter( 'render_block_core/navigation', 'aisa_navigation_controller', 10, 2 );
 
 require_once get_template_directory() . '/includes/demo-templates.php';
+require_once get_template_directory() . '/includes/page-patterns.php';

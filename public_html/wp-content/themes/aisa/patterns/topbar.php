@@ -16,7 +16,7 @@ $aisa_tel_digits = preg_replace( '/\D/', '', $aisa_tel );
 $aisa_tel_show   = implode( ' ', str_split( str_starts_with( $aisa_tel_digits, '351' ) ? substr( $aisa_tel_digits, 3 ) : $aisa_tel_digits, 3 ) );
 ?>
 <!-- wp:html -->
-<div class="topbar__inner">
+<div class="topbar__inner" role="region" aria-label="<?php esc_attr_e( 'Contactos e redes sociais', 'aisa' ); ?>">
 <ul class="topbar__contacts">
 <li class="topbar__tel"><a class="aisa-tel" href="<?php echo esc_url( 'tel:' . $aisa_tel ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Ligar para a AISA, %s', 'aisa' ), $aisa_tel_show ) ); ?>"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><?php echo esc_html( $aisa_tel_show ); ?></a></li>
 <li class="topbar__email"><a href="mailto:geral@aisaipss.pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>geral@aisaipss.pt</a></li>
