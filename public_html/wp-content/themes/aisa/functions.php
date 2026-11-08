@@ -74,10 +74,12 @@ function aisa_page_url( $slug ) {
 }
 
 /** Native block serialization keeps menus editable in the Site Editor. */
-function aisa_nav_link( $label, $slug ) {
+function aisa_nav_link( $label, $slug, $class = '' ) {
 	$url = 'agenda' === $slug ? get_post_type_archive_link( 'aisa_evento' ) : aisa_page_url( $slug );
 	if ( ! $url || '#' === $url ) { return ''; }
-	return serialize_block( array( 'blockName' => 'core/navigation-link', 'attrs' => array( 'label' => $label, 'url' => $url, 'kind' => 'custom' ), 'innerBlocks' => array(), 'innerHTML' => '', 'innerContent' => array() ) );
+	$attrs = array( 'label' => $label, 'url' => $url, 'kind' => 'custom' );
+	if ( $class ) { $attrs['className'] = $class; }
+	return serialize_block( array( 'blockName' => 'core/navigation-link', 'attrs' => $attrs, 'innerBlocks' => array(), 'innerHTML' => '', 'innerContent' => array() ) );
 }
 
 function aisa_nav_group( $label, $children, $class = '' ) {

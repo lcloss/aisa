@@ -29,9 +29,9 @@ $ageing = aisa_nav_link( __( 'Centro de Dia', 'aisa' ), 'centro-de-dia' ) . aisa
 $children = aisa_nav_link( __( 'Actividades de Animação e de Apoio à Família (AAAF)', 'aisa' ), 'atividades-de-animacao-e-de-apoio-a-familia' ) . aisa_nav_link( __( 'Componente de Apoio à Família (CAF)', 'aisa' ), 'componente-de-apoio-a-familia' ) . aisa_nav_link( __( 'Actividades de Enriquecimento Curricular (AEC)', 'aisa' ), 'atividades-de-enriquecimento-curricular' );
 $services = aisa_nav_group( __( 'Envelhecimento', 'aisa' ), $ageing, 'aisa-nav-group aisa-icon-centro-dia' );
 $services .= aisa_nav_group( __( 'Infância e Juventude', 'aisa' ), $children, 'aisa-nav-group aisa-icon-infancia' );
-$services .= aisa_nav_link( __( 'Saúde e Reabilitação', 'aisa' ), 'saude-e-reabilitacao' );
+$services .= aisa_nav_link( __( 'Saúde e Reabilitação', 'aisa' ), 'saude-e-reabilitacao', 'aisa-nav-solo aisa-icon-generico' );
 $services .= aisa_nav_group( __( 'Como aceder', 'aisa' ), aisa_nav_link( __( 'Candidaturas', 'aisa' ), 'candidaturas' ) . aisa_nav_link( __( 'Protocolos', 'aisa' ), 'protocolos' ), 'aisa-nav-group aisa-icon-generico' );
-$services .= aisa_nav_link( __( 'Ver todos os serviços', 'aisa' ), 'servicos' );
+$services .= aisa_nav_link( __( 'Ver todos os serviços', 'aisa' ), 'servicos', 'aisa-nav-all' );
 echo aisa_nav_group( __( 'Serviços', 'aisa' ), $services, 'aisa-services' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Serialized native blocks.
 $about = '';
 foreach ( array( 'quem-somos' => __( 'Quem Somos', 'aisa' ), 'equipa-tecnica' => __( 'Equipa Técnica', 'aisa' ), 'orgaos-sociais' => __( 'Órgãos Sociais', 'aisa' ), 'parcerias' => __( 'Parcerias', 'aisa' ), 'documentos' => __( 'Documentos', 'aisa' ) ) as $slug => $label ) {

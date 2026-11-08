@@ -191,6 +191,20 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
  .site-nav .wp-block-navigation__container { display: flex; flex-direction: row; flex-wrap: nowrap; }
  .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu:not(.aisa-services) > .wp-block-navigation__submenu-container { left: auto; right: 0; max-width: 100%; min-width: 0; }
  .site-nav .aisa-nav-group > button { cursor: default; }
+ /* Mega-menu Serviços: largura total do cabeçalho, 4 colunas alinhadas ao topo, rodapé "Ver todos". */
+ .site-nav.wp-block-navigation, .site-nav .wp-block-navigation__container { position: static; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu:not(.aisa-services) { position: relative; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu:not(.aisa-services) > .wp-block-navigation__submenu-container { top: 100%; left: 0; right: auto; min-width: 16rem; max-width: none; box-shadow: 0 12px 24px rgb(0 0 0 / .08); z-index: 20; }
+ .site-nav .aisa-services > .wp-block-navigation__submenu-container { top: 100%; left: 0; right: 0; width: auto; grid-template-columns: repeat(4,minmax(0,1fr)); align-items: start; gap: var(--space-5) var(--space-6); padding: var(--space-6); border-top: 1px solid var(--color-border, var(--color-input)); box-shadow: 0 12px 24px rgb(0 0 0 / .08); z-index: 20; }
+ .site-nav .aisa-services .aisa-nav-group > .wp-block-navigation__submenu-icon { display: none; }
+ .site-nav.wp-block-navigation .aisa-services > .wp-block-navigation__submenu-container > :is(.aisa-nav-group, .aisa-nav-solo) > .wp-block-navigation-item__content { width: 100%; justify-content: flex-start; padding-inline: 0; padding-bottom: var(--space-2); margin-bottom: var(--space-2); border-bottom: 1px solid var(--color-input); font-weight: var(--weight-body-bold); white-space: nowrap; }
+ .site-nav .aisa-services .aisa-nav-solo > a:before { content: ''; display: inline-block; flex: none; width: var(--space-5); height: var(--space-5); margin-right: var(--space-2); vertical-align: middle; background: var(--color-foreground); mask: var(--aisa-icon) center / contain no-repeat; }
+ .site-nav .aisa-services .aisa-nav-group > .wp-block-navigation__submenu-container { flex-direction: column; gap: 0; }
+ /* Links alinhados com o texto do título (depois do ícone). */
+ .site-nav.wp-block-navigation .aisa-services .aisa-nav-group > .wp-block-navigation__submenu-container .wp-block-navigation-item__content { padding-inline: calc(var(--space-5) + var(--space-2)) 0; }
+ .site-nav .aisa-services > .wp-block-navigation__submenu-container > .aisa-nav-all { grid-column: 1 / -1; padding-top: var(--space-4); border-top: 1px solid var(--color-input); }
+ .site-nav.wp-block-navigation .aisa-services > .wp-block-navigation__submenu-container > .aisa-nav-all > .wp-block-navigation-item__content { padding-inline: 0; font-weight: var(--weight-body-bold); color: var(--color-link); }
+ .site-nav .aisa-services .aisa-nav-all > a:after { content: '\00a0→'; }
 }
 /* Remaining pages: editorial rhythm and deliberately unequal service groups. */
 .aisa-service-group { margin-block: var(--space-8); }
