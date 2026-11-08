@@ -123,3 +123,41 @@ Manuais (obrigatórios):
 /wp-05-developer Implementa specs/wp-04-02-02-consentimento-medicao.md.
 Cookiebot (ou Complianz se a A12 for recusada — pergunta-me antes) com banner Aceitar/Rejeitar iguais, Consent Mode v2 sem duplicar o default do aisa-core, declaração em /politica-de-cookies/, "Preferências de cookies" no rodapé. Configura o contentor GTM e o GA4 conforme §3.2 (contas da AQ1; sem resposta usa a conta de teste da agência e avisa). Inventaria e bloqueia os embeds das notícias migradas. Prova K10 = 0 com o separador de rede e o Tag Assistant. Marca ✅ RF03, RF04, T09, P27 (e RF05 se o inventário estiver feito) em wp-03-product-backlog.md.
 ```
+
+## 8. Execução parcial — 2026-11-08
+
+**Não concluída; não há prova K10 nem configuração publicada de GTM/GA4.**
+
+- A12 e AQ1 continuam sem resposta nesta execução. Foi pedida a decisão sobre o plano pago e os acessos/IDs. Não foi escolhida a variante Complianz. A conta de teste da agência também não está acessível: não se inventaram IDs nem se configurou uma conta alheia.
+- A instalação oficial `wp --path=public_html plugin install cookiebot --activate` falhou no acesso ao WordPress.org; `curl.exe -I --max-time 15 https://downloads.wordpress.org/plugin/cookiebot.latest-stable.zip` devolveu erro 7 de ligação. Cookiebot não instalado/activado.
+- O controlo de Computer Use recusou acesso ao Google Chrome (`Computer Use was not approved to use Google Chrome`). Network em modo anónimo, Tag Assistant, DebugView, teclado/leitor de ecrã e axe **não executados**.
+- O `aisa-core` existente foi preservado: continua a ser a única fonte local de `consent default` e de GTM. Nenhuma segunda fonte foi acrescentada. A escolha final da opção/filtro para evitar a duplicação com o plugin fica pendente de inspeccionar e configurar a versão instalada; manter Consent Mode v2 e os updates da CMP. Não adicionar modelo CMP no GTM se o default continuar no core.
+- `assets/js/cookie-preferences.js` no tema delega o clique de `.aisa-cookie-prefs` para `Cookiebot.renew()`. Sem CMP, a ligação leva a `/politica-de-cookies/`. Não implementa banner nem armazenamento de consentimento próprios.
+- `specs/scripts/prepare-cookie-policy.php` prepara P27 em **rascunho**, com texto curto, `[cookie_declaration]` e ligação «Alterar preferências»; preserva uma página existente. Só publicar depois de validar a declaração gerada e o banner. A ligação do rodapé só terá um destino público disponível após essa publicação.
+- `specs/scripts/inventory-embeds.php` é de leitura e produz o inventário abaixo. Repetir após 02-05: as 87 notícias ainda não estão migradas. Não havia incorporados para tratar no conteúdo local detectado; o bloqueio por CMP ainda não está validado.
+
+### Inventário local (não é o inventário final de RF05)
+
+| ID da notícia | Estado | Tipo | Acção |
+|---|---|---|---|
+| 1 | draft | Nenhum | Rascunho inicial; sem incorporados detectados |
+| 68 | publish | Nenhum | Demonstração; sem incorporados detectados |
+| 69 | publish | Nenhum | Demonstração; sem incorporados detectados |
+| 70 | publish | Nenhum | Demonstração; sem incorporados detectados |
+| 71 | publish | Nenhum | Demonstração; sem incorporados detectados |
+
+### Verificação local realizada
+
+- Lint PHP de `functions.php`, `patterns/footer.php` e dos dois scripts: aprovado.
+- `node --check` do JS e teste isolado do clique (CMP ausente, `renew()` disponível, clique fora da ligação): aprovados.
+- HTTP da página inicial: ligação de preferências com o URL correcto e JS enfileirado; sem GTM configurado. Isto **não prova K10 com o contentor real**.
+- `git diff --check`: sem erros de whitespace.
+- Backlog: apenas os estados de P27, RF03 e RF05 avançaram para 🔄 com os bloqueios; RF04 e T09 continuam 🔄. Nenhum ✅ atribuído sem os critérios de aceitação.
+
+### Retoma
+
+1. Resolver A12 e obter Domain Group ID/acesso Cookiebot; permitir a instalação oficial. Se A12 for recusada, confirmar a mudança para Complianz antes de instalar.
+2. Aplicar §3.1 no painel e no plugin, confirmar uma única fonte de default e updates, testar declaração e publicar P27. Configurar Aceitar/Rejeitar com o mesmo estilo, categorias sem pré-selecção, fecho como rejeição, registos e acessibilidade.
+3. Obter acesso AQ1 ou à conta de teste da agência. Criar/configurar propriedade e contentor conforme §3.2, incluindo consentimento adicional `analytics_storage` **em todas as etiquetas GA4**, não apenas na Google Tag. Usar uma só fonte de downloads (preferência: etiqueta GTM; desligar o automático no Enhanced Measurement). Confirmar que a concessão de estatísticas após Initialization também inicia a medição sem exigir navegação, antes de publicar a versão 1.
+4. Executar a migração e repetir `wp --path=public_html eval-file specs/scripts/inventory-embeds.php`; tratar e verificar cada incorporado e o mapa estático de Contactos.
+5. Capturar Network sem consentimento, após rejeição e após retirada; Tag Assistant antes/depois e DebugView dos eventos. Só então fechar os itens aplicáveis com ✅.

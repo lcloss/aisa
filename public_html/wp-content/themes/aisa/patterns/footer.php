@@ -22,7 +22,7 @@ foreach ( $columns as $heading => $links ) : ?>
 <li><a href="<?php echo esc_url( aisa_page_url( $slug ) ); ?>"><?php echo esc_html( $label ); ?></a></li>
 <?php endforeach; ?>
 <?php if ( __( 'Legais', 'aisa' ) === $heading ) : ?>
-<li><a href="#" class="aisa-cookie-prefs"><?php esc_html_e( 'Preferências de cookies', 'aisa' ); ?></a></li>
+<li><a href="<?php echo esc_url( home_url( '/politica-de-cookies/' ) ); ?>" class="aisa-cookie-prefs"><?php esc_html_e( 'Preferências de cookies', 'aisa' ); ?></a></li>
 <!-- Livro de Reclamações: aguarda confirmação A9. -->
 <?php endif; ?>
 </ul></div>
