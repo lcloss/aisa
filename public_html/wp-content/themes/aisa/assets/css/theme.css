@@ -10,11 +10,10 @@
 .aisa-section__inner > h2 { font-size: clamp(2rem, 4vw, var(--text-display)); max-width: 22ch; margin: 0 0 var(--space-7); }
 .hero__title { max-width: 12ch; font-variation-settings: 'SOFT' 60, 'WONK' 1; }
 .aisa-phase,.aisa-participate { display: grid; grid-template-columns: 7fr 5fr; gap: var(--space-8); align-items: center; margin-top: var(--space-8); }
-.aisa-phase:nth-of-type(2) { grid-template-columns: 5fr 7fr; }
+.aisa-phase--reverse { grid-template-columns: 5fr 7fr; }
 .aisa-phase--reverse > figure { order: 2; }
 .aisa-phase figure,.aisa-participate figure { margin: 0; min-width: 0; }
 .aisa-phase img,.aisa-participate img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.aisa-phase:nth-of-type(3) { margin-left: 12%; }
 .aisa-phase h3 { font-size: clamp(1.75rem, 3vw, 2.75rem); margin-top: 0; }
 .aisa-phase li { padding-block: var(--space-2); }
 .aisa-phase li a { display: inline-block; min-height: 44px; }
@@ -55,9 +54,8 @@
 .aisa-home .hero__actions .wp-block-buttons { margin: 0; }
 .aisa-home .slideshow { min-width: 0; }
 @media (max-width: 900px) {
- .aisa-phase,.aisa-phase:nth-of-type(2),.aisa-participate { grid-template-columns: 1fr; gap: var(--space-5); }
+ .aisa-phase,.aisa-phase--reverse,.aisa-participate { grid-template-columns: 1fr; gap: var(--space-5); }
  .aisa-phase--reverse > figure { order: 0; }
- .aisa-phase:nth-of-type(3) { margin-left: 0; }
  .aisa-service-layout { grid-template-columns: 1fr; gap: var(--space-5); }
  .aisa-news-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
  .aisa-news-list .news-card--lead { grid-template-columns: 1fr; }
