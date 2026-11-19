@@ -34,7 +34,6 @@
 .news-card__title a { display: inline-block; min-height: 44px; color: var(--color-foreground); text-underline-offset: .15em; }
 .news-card .wp-block-post-date { margin-top: var(--space-3); font-size: var(--text-caption); }
 .aisa-news-index { padding-block: var(--space-8); }
-.aisa-main .page-header__box { border-top: 6px solid var(--v-accent,var(--color-primary)); padding-top: var(--space-5); }
 .aisa-main .page-header__title { margin-top: var(--space-3); }
 .aisa-service-layout { max-width: 1200px; margin: var(--space-8) auto; display: grid; grid-template-columns: minmax(0,720px) minmax(0,1fr); gap: var(--space-8); align-items: start; }
 .aisa-service-layout > .wp-block-post-content { margin-top: 0; }
@@ -132,7 +131,6 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .site-footer__address { font-style: normal; }
 .site-footer__grid { max-width: var(--wp--style--global--wide-size); }
 .site-footer__legal { max-width: var(--wp--style--global--wide-size); }
-.page-header__box { border-radius: 0; box-shadow: none; }
 .page-header__title { margin: 0; }
 .page-header__media { margin: 0; }
 .page-header__media img { height: 100%; }
@@ -196,10 +194,10 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 @media (prefers-reduced-motion: reduce) {
  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
-/* Plain editorial page heading; no raised card. */
-.page-header__inner { max-width: var(--wp--style--global--wide-size); margin-inline: auto; padding: var(--space-6) var(--space-5) 0; }
-.page-header__box { max-width: var(--wp--style--global--content-size); }
-.page-header__card,.testimonial { border-radius: 0; box-shadow: none; }
+.testimonial { border-radius: 0; box-shadow: none; }
+/* Página de serviço: cabeçalho em cartão sobre a imagem (brand-04-modelos-pagina.html, modelo 2). */
+.page-header__card .valencia-tag a { color: inherit; text-decoration: none; }
+.page-header__card .page-header__title { margin: var(--space-2) 0 0; }
 @media (min-width: 1101px) {
  .site-nav .wp-block-navigation__container { display: flex; flex-direction: row; flex-wrap: nowrap; }
  .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu:not(.aisa-services) > .wp-block-navigation__submenu-container { left: auto; right: 0; max-width: 100%; min-width: 0; }
@@ -249,4 +247,32 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
  .aisa-service-cards,.aisa-service-group:nth-of-type(even) .aisa-service-cards,.aisa-service-group:nth-of-type(4) .aisa-service-cards,.aisa-people { grid-template-columns:1fr; }
  .aisa-service-group:nth-of-type(3) .aisa-service-cards { max-width:100%; }
  .aisa-service-callout { padding:var(--space-4); }
+}
+/* Breadcrumbs (G05): aisa/breadcrumbs, no topo do cabeçalho de página. */
+.breadcrumb__list { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: 0; padding: 0; list-style: none; }
+.breadcrumb__item { display: inline-flex; align-items: center; gap: var(--space-2); }
+.breadcrumb__item + .breadcrumb__item::before { content: '›'; color: var(--color-muted-foreground); }
+.breadcrumb a { text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.breadcrumb [aria-current="page"] { color: var(--color-foreground); }
+.page-header__card .breadcrumb { margin-bottom: var(--space-4); }
+/* Menu principal: hierarquia tipográfica e estados (hover, aberto, página actual). */
+@media (min-width: 1101px) {
+ .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content { position: relative; font-weight: var(--weight-body-bold); letter-spacing: 0.01em; color: var(--color-foreground); text-decoration: none; transition: color .15s ease; }
+ .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content::after { content: ''; position: absolute; left: var(--space-2); right: var(--space-2); bottom: 4px; height: 3px; border-radius: 3px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+ .site-nav .wp-block-navigation__container > li > button.wp-block-navigation-item__content::after { left: 0; right: 0.85em; }
+ .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"]) { color: var(--color-link); }
+ .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"])::after { transform: scaleX(1); }
+ .site-nav .wp-block-navigation__container > li:has(> [aria-expanded="true"]) > .wp-block-navigation__submenu-icon { color: var(--color-link); transform: rotate(180deg); }
+ .site-nav .wp-block-navigation__container > li > .wp-block-navigation__submenu-icon { transition: transform .2s ease; }
+ /* Painéis: cantos inferiores arredondados, como os cartões. */
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu > .wp-block-navigation__submenu-container { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+ /* Títulos de coluna do mega-menu em Fraunces, com mais personagem. */
+ .site-nav.wp-block-navigation .aisa-services > .wp-block-navigation__submenu-container > :is(.aisa-nav-group, .aisa-nav-solo) > .wp-block-navigation-item__content { font-family: var(--font-display); font-weight: var(--weight-medium); font-size: var(--text-h4); letter-spacing: 0; }
+ /* Ligações dos submenus. */
+ .site-nav .wp-block-navigation__submenu-container .wp-block-navigation-submenu__container a, .site-nav .wp-block-navigation__submenu-container a.wp-block-navigation-item__content { text-decoration: none; transition: color .15s ease; }
+ .site-nav .wp-block-navigation__submenu-container a.wp-block-navigation-item__content:hover, .site-nav .wp-block-navigation__submenu-container a[aria-current="page"] { color: var(--color-link); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.25em; }
+}
+@media (min-width: 1101px) and (prefers-reduced-motion: reduce) {
+ .site-nav .wp-block-navigation-item__content::after, .site-nav .wp-block-navigation__submenu-icon { transition: none; }
 }

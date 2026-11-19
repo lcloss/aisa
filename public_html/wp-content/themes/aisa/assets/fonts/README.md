@@ -1,16 +1,11 @@
-# Fontes locais pendentes
+# Fontes locais
 
-Os binários e as licenças ainda não puderam ser descarregados: o ambiente
-bloqueou o acesso externo. `theme.json` já declara os seis ficheiros WOFF2
-esperados. O tema usa as fontes de fallback até serem instalados.
+Instaladas a 2026-11-19 a partir dos pacotes npm do Fontsource (subconjunto `latin`, suficiente para português):
 
-Com acesso aos repositórios oficiais:
+| Ficheiro | Origem |
+|---|---|
+| `fraunces-normal.woff2`, `fraunces-italic.woff2` | `@fontsource-variable/fraunces@5.1.1` (`files/fraunces-latin-full-*.woff2`; variável: wght, opsz, SOFT, WONK) |
+| `atkinson-{400,700}-{normal,italic}.woff2` | `@fontsource/atkinson-hyperlegible@5.1.1` (`files/atkinson-hyperlegible-latin-*.woff2`) |
 
-    python -m pip install "fonttools[woff]"
-    python public_html/wp-content/themes/aisa/tools/fetch-fonts.py
-
-O importador obtém Fraunces e Atkinson Hyperlegible de google/fonts, com as
-licenças OFL, conserva a cobertura completa Latin/Latin Extended e converte
-para WOFF2. Nenhum pedido a serviços de fontes é feito pelo tema em execução.
-
-Repetir as verificações de VERIFICATION.md antes de concluir T01.
+Licença: SIL Open Font License 1.1 (`OFL-Fraunces.txt`, `OFL-AtkinsonHyperlegible.txt`).
+Declaradas em `theme.json` (`fontFace`). O tema não faz pedidos a serviços externos de fontes.

@@ -12,17 +12,22 @@ function aisa_setup() {
 }
 add_action( 'after_setup_theme', 'aisa_setup' );
 
+/** Versão do ficheiro = versão do tema + data de modificação, para o browser não servir CSS/JS antigos. */
+function aisa_asset_version( $path ) {
+	$mtime = @filemtime( get_theme_file_path( $path ) ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+	return wp_get_theme()->get( 'Version' ) . ( $mtime ? '.' . $mtime : '' );
+}
+
 function aisa_enqueue_assets() {
-	$version = wp_get_theme()->get( 'Version' );
-	wp_enqueue_style( 'aisa-base', get_theme_file_uri( 'assets/css/base.css' ), array(), $version );
-	wp_enqueue_style( 'aisa-components', get_theme_file_uri( 'assets/css/components.css' ), array( 'aisa-base' ), $version );
-	wp_enqueue_style( 'aisa-theme', get_theme_file_uri( 'assets/css/theme.css' ), array( 'aisa-components' ), $version );
+	wp_enqueue_style( 'aisa-base', get_theme_file_uri( 'assets/css/base.css' ), array(), aisa_asset_version( 'assets/css/base.css' ) );
+	wp_enqueue_style( 'aisa-components', get_theme_file_uri( 'assets/css/components.css' ), array( 'aisa-base' ), aisa_asset_version( 'assets/css/components.css' ) );
+	wp_enqueue_style( 'aisa-theme', get_theme_file_uri( 'assets/css/theme.css' ), array( 'aisa-components' ), aisa_asset_version( 'assets/css/theme.css' ) );
 	if ( defined( 'WPCF7_VERSION' ) ) {
-		wp_enqueue_style( 'aisa-forms', get_theme_file_uri( 'assets/css/forms-cf7.css' ), array( 'aisa-theme' ), $version );
+		wp_enqueue_style( 'aisa-forms', get_theme_file_uri( 'assets/css/forms-cf7.css' ), array( 'aisa-theme' ), aisa_asset_version( 'assets/css/forms-cf7.css' ) );
 	}
-	wp_enqueue_script( 'aisa-nav', get_theme_file_uri( 'assets/js/nav.js' ), array(), $version, array( 'strategy' => 'defer', 'in_footer' => true ) );
-	wp_enqueue_script( 'aisa-search', get_theme_file_uri( 'assets/js/search.js' ), array(), $version, array( 'strategy' => 'defer', 'in_footer' => true ) );
-	wp_enqueue_script( 'aisa-cookie-preferences', get_theme_file_uri( 'assets/js/cookie-preferences.js' ), array(), $version, array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'aisa-nav', get_theme_file_uri( 'assets/js/nav.js' ), array(), aisa_asset_version( 'assets/js/nav.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'aisa-search', get_theme_file_uri( 'assets/js/search.js' ), array(), aisa_asset_version( 'assets/js/search.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'aisa-cookie-preferences', get_theme_file_uri( 'assets/js/cookie-preferences.js' ), array(), aisa_asset_version( 'assets/js/cookie-preferences.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
 }
 add_action( 'wp_enqueue_scripts', 'aisa_enqueue_assets' );
 
@@ -101,6 +106,22 @@ function aisa_navigation_controller( $content, $block ) {
 	return $processor->get_updated_html();
 }
 add_filter( 'render_block_core/navigation', 'aisa_navigation_controller', 10, 2 );
+
+/**
+ * Mega-menu: uma coluna "solo" (ex.: Saúde e Reabilitação) a que se acrescentam
+ * subitens no editor passa a navigation-submenu, mas mantém a classe aisa-nav-solo
+ * e abria como dropdown lateral. Converte-a em coluna de grupo (aisa-nav-group).
+ */
+function aisa_nav_solo_to_group( $content ) {
+	$processor = new WP_HTML_Tag_Processor( $content );
+	if ( $processor->next_tag( 'li' ) && $processor->has_class( 'aisa-nav-solo' ) ) {
+		$processor->remove_class( 'aisa-nav-solo' );
+		$processor->add_class( 'aisa-nav-group' );
+		return $processor->get_updated_html();
+	}
+	return $content;
+}
+add_filter( 'render_block_core/navigation-submenu', 'aisa_nav_solo_to_group', 10, 1 );
 
 require_once get_template_directory() . '/includes/demo-templates.php';
 require_once get_template_directory() . '/includes/page-patterns.php';
