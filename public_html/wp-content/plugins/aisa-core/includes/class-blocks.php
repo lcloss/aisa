@@ -14,7 +14,7 @@ class Blocks {
 		if ( ! defined( 'AISA_TELEFONE' ) ) {
 			define( 'AISA_TELEFONE', '+351214857700' );
 		}
-		foreach ( array( 'telefone', 'provas', 'proximos-eventos', 'depoimentos', 'documentos', 'regulamentos', 'slideshow' ) as $name ) {
+		foreach ( array( 'telefone', 'provas', 'proximos-eventos', 'depoimentos', 'documentos', 'regulamentos', 'slideshow', 'breadcrumbs' ) as $name ) {
 			register_block_type( AISA_CORE_PATH . 'blocks/' . $name );
 		}
 	}

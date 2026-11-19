@@ -30,7 +30,7 @@
 | 4 | Marca | `core-04-brand` (router do subprocesso `brand-*`) | `core-04-brand.md` + `brand-*.md` | ☑ Concluído para o lançamento (2026-11-07, modo mínimo; `brand-05` adiado; fundos à espera de decisão da cliente) |
 | 5 | Requisitos funcionais | `core-05-product-owner` | `core-05-prd.md` | ☑ Concluído (2026-11-07) |
 | 6 | Revisão legal | `core-06-legal` | `core-06-legal-requirements.md` | ☑ Concluído (2026-11-07; lacunas G1–G8 incorporadas no PRD, revisão 1) |
-| 7 | Build (ramo B — WordPress) | `core-07-build` (router do ramo `wp-*`) | `core-07-build.md` + `wp-*` | ◐ Em curso (2026-11-07; mapa do ramo criado, próximo: `wp-05-developer` com `wp-04-01-01`) |
+| 7 | Build (ramo B — WordPress) | `core-07-build` (router do ramo `wp-*`) | `core-07-build.md` + `wp-*` | ◐ Em curso (actualizado 2026-11-19: specs 01-01…01-05 e 02-01…02-04 implementadas, com pendentes; faltam 02-05 migração, 02-06 Rank Math, 03-01 hardening, 03-02 permissões) |
 | — | Pedido de alteração *(skill solta, pós-MVP)* | `core-08-change-request` | `core-08-change-request-NN-slug.md` | — |
 | — | Revisão de projeto *(skill solta, reinvocável)* | `core-09-project-reviewer` | `core-09-divergencias-projeto.md` | — |
 | 10 | Documentação | `core-10-documentator` | `docs/documentation.html` | ☐ Não iniciado |
@@ -51,7 +51,7 @@
 | brand-03 | `brand-03-visual-identity.html` | logo, paleta, tipografia, aplicações | ☑ (2026-11-07, migrada de `proto-1/` + valências + feedback do cliente) |
 | brand-04 | `brand-04-design-system.md` + `tokens/` | tokens OKLCH, gate WCAG | ☑ (2026-11-07, migrado + valências + componentes do site + modelos de página + teste de fundos V1/V2) |
 | brand-05 | `brand-05-manual.html` | manual de marca client-facing | ☐ |
-| wp-01…09 | `wp-*` (envisioning → architecture → business-analyst → project-manager → developer → seo → security → bug-reviewer → deploy) | ramo B — ver `core-07-build` | ☐ |
+| wp-01…09 | `wp-*` (envisioning → architecture → business-analyst → project-manager → developer → seo → security → bug-reviewer → deploy) | ramo B — ver `core-07-build` | ◐ wp-01…04 ☑; wp-05 em curso; wp-06…09 ☐ |
 
 ## 4. Desvios e justificações
 
@@ -122,3 +122,13 @@
   - **Q5**, mudança do Centro de Dia para as novas instalações (ampliação num local próximo): data da mudança, morada e contactos;
   - **nome oficial do CEE**: "Centro Educativo Especializado" (relatório de 2025) ou "Centro de Ensino Estruturado" (`core-01-briefing.md`). Ver `business-02-proposal.md`, Q1a.
 - **A actualizar quando se reinvocar `business-03-risks`:** o R4 desce com a anonimização dos depoimentos; fica o risco residual de reidentificação pelo conteúdo (`business-02-proposal.md`, Q4).
+
+## 6. Ponto de retoma (actualizado 2026-11-19, Modo 2)
+
+- **Ramo `wp-*`:** `wp-01` a `wp-04` concluídos. O `wp-05-developer` está em curso, com o tema `aisa` e o plugin `aisa-core` já no repositório:
+  - **Feitas (com pendentes de verificação axe/Lighthouse):** `wp-04-01-01` a `01-05` (demo M0) e `wp-04-02-01` a `02-04` (consentimento/GTM, formulários, páginas restantes).
+  - **Por fazer:** `wp-04-02-05` (migração: RF06–RF08, T10, T11), `wp-04-02-06` (Rank Math: G05, T12), `wp-04-03-01` (hardening: T14) e `wp-04-03-02` (login/permissões: RF11).
+- **Próximo passo:** `/wp-05-developer` com `wp-04-02-05-migracao.md` (tem de vir antes de `02-06`). Depois: `wp-06-seo-reviewer`, `wp-07-security-reviewer` e `wp-08-bug-reviewer`.
+- **Prazo:** a data de lançamento de 15/11/2026 já passou e o lançamento ainda não aconteceu. **É preciso fixar uma nova data com a cliente** e registá-la em `business-03-risks.md`.
+- **Continuam a bloquear:** A4 (acessos, necessários para a migração), A6 (e-mail dos formulários), A10 (EPD), A12 (Cookiebot), a versão de fundos e a cor de "Saúde e Reabilitação".
+- **Ficheiros novos fora do mapa:** `brand-03-visual-identity-cliente.html` e `brand-04-design-system-cliente.html` (versões para a cliente, ainda sem commit). Não mudam o estado da fase 4.

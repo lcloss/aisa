@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 <!-- /wp:html -->
 <!-- wp:html -->
 <a class="btn btn-secondary site-header__search" href="<?php echo esc_url( home_url( '/?s=' ) ); ?>" aria-label="<?php esc_attr_e( 'Pesquisar no site', 'aisa' ); ?>"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
-<a class="btn btn-accent site-header__cta" href="<?php echo esc_url( aisa_page_url( 'torne-se-socio' ) ); ?>"><?php esc_html_e( 'Torne-se sócio', 'aisa' ); ?></a>
+<a class="btn btn-accent site-header__cta" href="<?php echo esc_url( aisa_page_url( 'apoie-a-nossa-causa' ) ); ?>"><?php esc_html_e( 'Apoie a nossa causa', 'aisa' ); ?></a>
 <!-- /wp:html -->
 <!-- wp:html -->
 <button class="btn btn-secondary site-header__menu" aria-expanded="false" aria-controls="aisa-menu-panel" hidden><?php esc_html_e( 'Menu', 'aisa' ); ?></button>

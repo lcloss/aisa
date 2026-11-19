@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "aisa/breadcrumbs",
+  "title": "Breadcrumbs",
+  "description": "Caminho até à página actual (Início › … › página). Usa o Rank Math quando estiver activo.",
+  "category": "aisa",
+  "icon": "arrow-right-alt2",
+  "textdomain": "aisa",
+  "usesContext": [ "postId", "postType" ],
+  "supports": {
+    "html": false,
+    "color": false,
+    "typography": false
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}
