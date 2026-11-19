@@ -102,7 +102,7 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .site-header__menu { order: 3; }
 .wp-site-blocks > .topbar, .wp-site-blocks > .topbar + .site-header { margin-block: 0; }
 .topbar__inner, .site-search__inner { max-width: var(--wp--style--global--wide-size); }
-.topbar a:focus-visible { outline: 2px solid var(--color-background); box-shadow: none; }
+.topbar__inner a:focus-visible { outline: 2px solid var(--color-background); box-shadow: none; }
 .site-search .wp-block-search__label { font-size: var(--text-caption); color: var(--color-muted-foreground); }
 .site-search .wp-block-search__input { flex: 1 1 16rem; }
 .aisa-menu-toolbar { display: none; }
@@ -258,13 +258,13 @@ h1 { font-size: var(--text-h1); } h2 { font-size: var(--text-h2); } h3 { font-si
 .page-header__card .breadcrumb { margin-bottom: var(--space-4); }
 /* Menu principal: hierarquia tipográfica e estados (hover, aberto, página actual). */
 @media (min-width: 1101px) {
- .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content { position: relative; font-weight: var(--weight-body-bold); letter-spacing: 0.01em; color: var(--color-foreground); text-decoration: none; transition: color .15s ease; }
- .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content::after { content: ''; position: absolute; left: var(--space-2); right: var(--space-2); bottom: 4px; height: 3px; border-radius: 3px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
- .site-nav .wp-block-navigation__container > li > button.wp-block-navigation-item__content::after { left: 0; right: 0.85em; }
- .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"]) { color: var(--color-link); }
- .site-nav .wp-block-navigation__container > li > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"])::after { transform: scaleX(1); }
- .site-nav .wp-block-navigation__container > li:has(> [aria-expanded="true"]) > .wp-block-navigation__submenu-icon { color: var(--color-link); transform: rotate(180deg); }
- .site-nav .wp-block-navigation__container > li > .wp-block-navigation__submenu-icon { transition: transform .2s ease; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content { position: relative; font-weight: var(--weight-body-bold); letter-spacing: 0.01em; color: var(--color-foreground); text-decoration: none; transition: color .15s ease; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content::after { content: ''; position: absolute; left: var(--space-2); right: var(--space-2); bottom: 4px; height: 3px; border-radius: 3px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > button.wp-block-navigation-item__content::after { left: 0; right: 0.85em; }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"]) { color: var(--color-link); }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content:is(:hover, [aria-expanded="true"], [aria-current="page"])::after { transform: scaleX(1); }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item:has(> [aria-expanded="true"]) > .wp-block-navigation__submenu-icon { color: var(--color-link); transform: rotate(180deg); }
+ .site-nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation__submenu-icon { transition: transform .2s ease; }
  /* Painéis: cantos inferiores arredondados, como os cartões. */
  .site-nav .wp-block-navigation__container > .wp-block-navigation-submenu > .wp-block-navigation__submenu-container { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
  /* Títulos de coluna do mega-menu em Fraunces, com mais personagem. */

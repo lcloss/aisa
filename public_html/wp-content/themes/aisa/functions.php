@@ -6,7 +6,7 @@ function aisa_setup() {
 	load_theme_textdomain( 'aisa', get_template_directory() . '/languages' );
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'post-thumbnails' );
-	add_editor_style( array( 'assets/css/base.css', 'assets/css/components.css', 'assets/css/theme.css' ) );
+	add_editor_style( array( 'assets/css/base.css', 'assets/css/components.css', 'assets/css/theme.css', 'assets/css/editor.css' ) );
 	remove_theme_support( 'core-block-patterns' );
 	register_nav_menus( array( 'principal' => __( 'Principal', 'aisa' ), 'rodape' => __( 'Rodapé', 'aisa' ) ) );
 }

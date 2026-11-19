@@ -1,0 +1,45 @@
+/*
+ * Só no editor (add_editor_style). No site, o nav.js e o atributo `hidden` fecham
+ * submenus, pesquisa e controlos do menu de telemóvel; no editor não há JS do tema
+ * e os blocos HTML do padrão aisa/header são mostrados um a um. Isto reproduz o
+ * estado "fechado" do site para que o Cabeçalho se pareça com o real.
+ */
+
+/* Submenus fechados; abrem quando o item (ou um filho) está seleccionado ou com o rato por cima. */
+.site-nav .wp-block-navigation__submenu-container:not([hidden]) {
+	visibility: hidden;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+.site-nav .has-child:is(.is-selected, .has-child-selected, :hover, :focus-within) > .wp-block-navigation__submenu-container,
+.site-nav .aisa-services .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container {
+	visibility: visible;
+	opacity: 1;
+	width: auto;
+	height: auto;
+	overflow: visible;
+}
+
+/* Controlos que no site só existem no menu de telemóvel ou na pesquisa aberta. */
+.site-header__inner .wp-block-aisa-telefone,
+.aisa-menu-close,
+.site-header__menu,
+.site-search__form {
+	display: none !important;
+}
+
+/* Ordem como no site: logótipo · menu · pesquisa + botão de destaque. No editor, o HTML vem embrulhado num bloco. */
+.site-header__inner > .wp-block-html:has(.site-header__cta) {
+	order: 2;
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	margin-left: auto;
+}
+.site-header__inner > .wp-block-html:has(.site-header__cta) > .block-editor-inner-content {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+}

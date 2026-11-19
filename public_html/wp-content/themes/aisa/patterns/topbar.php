@@ -6,7 +6,7 @@
  * Inserter: no
  *
  * Telefone, e-mail, morada e redes sociais. O botão de destaque do
- * cabeçalho é "Torne-se sócio" (patterns/header.php).
+ * cabeçalho é "Apoie a nossa causa" (patterns/header.php).
  */
 defined( 'ABSPATH' ) || exit;
 $aisa_contacts_url = aisa_page_url( 'contactos' );

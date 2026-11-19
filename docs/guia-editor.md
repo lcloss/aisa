@@ -36,6 +36,7 @@ Exemplo, coluna "Saúde e Reabilitação" com subitens: `aisa-nav-group aisa-ico
 - No telemóvel, todos os grupos funcionam como acordeões, com ou sem classe.
 - Máximo de 2 níveis abaixo de "Serviços" (grupo → página). Não cries submenus dentro de subitens.
 - Depois de guardar, confirma o resultado no site em ecrã largo e em ecrã de telemóvel.
+- **No editor**, o Cabeçalho aparece "fechado", como no site. Os submenus abrem quando seleccionas o item (ou passas o rato por cima). O botão "Fechar menu", o telefone do menu de telemóvel e a caixa de pesquisa estão escondidos no editor, porque no site só aparecem nesses estados (CSS em `assets/css/editor.css`). Para os alterar, usa a vista de lista (ícone ☰ no topo do editor).
 
 ### 1.4 Botão de destaque e "Participar"
 
